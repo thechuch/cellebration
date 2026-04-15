@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Cellebration — Full Service Index. Every therapy, grouped by category.">
-  <title>Cellebration — Full Service Index</title>
+  <meta name="description" content="The clinical team behind Cellebration — founder-led, physician-driven, across two South Florida clinics.">
+  <title>Cellebration — Team</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -12,12 +12,8 @@
 </head>
 <body>
 
-  <!-- Wireframe banner — only renders when .theme-wire is active -->
   <div class="wireframe-banner" aria-hidden="true">Wireframe Preview · Structure &amp; Content Only</div>
 
-  <!-- ============================================================
-       THEME SWITCHER — bottom-right stoplight pill
-       ============================================================ -->
   <div class="theme-switcher" role="toolbar" aria-label="Preview theme">
     <button type="button" data-theme="wire" class="active switcher-wire" title="Wireframe" aria-label="Wireframe">
       <span class="swatch swatch-wire"></span>
@@ -39,9 +35,6 @@
     </div>
   </div>
 
-  <!-- ============================================================
-       NAV (floating on scroll · hover mega-menu · mobile drawer)
-       ============================================================ -->
   <header class="site-nav" id="siteNav">
     <div class="nav-inner">
       <a href="index.html" class="logo" aria-label="Cellebration — Home">
@@ -51,7 +44,6 @@
 
       <nav class="primary-nav" aria-label="Primary">
 
-        <!-- Services — mega-menu on hover/focus -->
         <div class="nav-item has-mega">
           <a href="services-all.html" class="nav-link" aria-haspopup="true">
             Services <span class="caret" aria-hidden="true">▾</span>
@@ -113,7 +105,6 @@
           </div>
         </div>
 
-        <!-- Memberships — simple dropdown on hover/focus -->
         <div class="nav-item has-dropdown">
           <a href="memberships.html" class="nav-link" aria-haspopup="true">
             Memberships <span class="caret" aria-hidden="true">▾</span>
@@ -135,7 +126,7 @@
         </div>
 
         <div class="nav-item">
-          <a href="team.html" class="nav-link">Team</a>
+          <a href="team.html" class="nav-link active">Team</a>
         </div>
         <div class="nav-item">
           <a href="contact.html" class="nav-link">Contact</a>
@@ -152,9 +143,6 @@
     </div>
   </header>
 
-  <!-- ============================================================
-       MOBILE DRAWER
-       ============================================================ -->
   <aside class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Menu" aria-hidden="true">
     <div class="mobile-drawer-inner">
       <div class="mobile-drawer-header">
@@ -168,7 +156,7 @@
       </div>
 
       <nav class="mobile-nav" aria-label="Mobile">
-        <details class="mobile-section" open>
+        <details class="mobile-section">
           <summary>
             <span>Services</span>
             <span class="mobile-caret" aria-hidden="true">＋</span>
@@ -212,276 +200,95 @@
 
   <main id="top">
 
-    <!-- ============================================================
-         PAGE HERO
-         ============================================================ -->
     <section class="page-hero">
       <div class="container">
         <nav class="breadcrumb" aria-label="Breadcrumb">
-          <a href="index.html">Home</a>
-          <span aria-hidden="true">›</span>
-          <a href="services-all.html">Services</a>
-          <span aria-hidden="true">›</span>
-          <span aria-current="page">Full Service Index</span>
+        <a href="index.html">Home</a>
+        <span aria-hidden="true">›</span>
+        <span aria-current="page">Team</span>
         </nav>
-        <span class="eyebrow">Full Service Index</span>
-        <h1 class="page-title">Every therapy, in one place.</h1>
-        <p class="page-sub">The complete Cellebration catalog, grouped by category. Every therapy connects back to one or more outcome pillars — jump to any pillar page for strategy and context.</p>
+        <span class="eyebrow">The Team</span>
+        <h1 class="page-title">The team behind the protocol.</h1>
+        <p class="page-sub">Founder-led, clinician-driven. Every protocol at Cellebration is built by people who practice what they prescribe.</p>
       </div>
     </section>
 
-    <!-- ============================================================
-         SERVICE INDEX
-         ============================================================ -->
-    <section class="service-index">
+    <section class="founder-section">
       <div class="container">
-
-        <!-- Core Therapies -->
-        <div class="index-category">
-          <header class="index-category-header">
-            <span class="index-num">01</span>
-            <h2>Core Therapies</h2>
-            <p>The foundational systemic protocols. Everything at Cellebration is built on top of these.</p>
-          </header>
-          <ul class="index-list">
-            <li class="index-item">
-              <span class="item-head">
-                <strong>EBOO</strong>
-                <span class="pillars">Restore · Protect · Regenerate</span>
-              </span>
-              <span class="item-desc">Filters and oxygenates your full blood volume. The foundation everything else is built on.</span>
-            </li>
-            <li class="index-item">
-              <span class="item-head">
-                <strong>HBOT</strong>
-                <span class="pillars">Restore · Perform · Protect · Regenerate · Weight Loss · Aesthetics</span>
-              </span>
-              <span class="item-desc">Pressurized oxygen that supports tissue recovery and cellular repair.</span>
-            </li>
-            <li class="index-item">
-              <span class="item-head">
-                <strong>IV Therapy</strong>
-                <span class="pillars">Restore · Perform · Protect</span>
-              </span>
-              <span class="item-desc">NAD+, minerals, and vitamins delivered for immediate systemic uptake.</span>
-            </li>
-            <li class="index-item">
-              <span class="item-head">
-                <strong>IM Injections</strong>
-                <span class="pillars">Restore · Perform</span>
-              </span>
-              <span class="item-desc">Targeted intramuscular vitamin and peptide shots.</span>
-            </li>
-            <li class="index-item">
-              <span class="item-head">
-                <strong>Hydrogen Breathing</strong>
-                <span class="pillars">Restore · Protect</span>
-              </span>
-              <span class="item-desc">Supports oxidative balance at the cellular level.</span>
-            </li>
-            <li class="index-item">
-              <span class="item-head">
-                <strong>Hypoxic Training</strong>
-                <span class="pillars">Perform</span>
-              </span>
-              <span class="item-desc">Controlled low-oxygen exposure for cardiovascular adaptation.</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Regenerative -->
-        <div class="index-category">
-          <header class="index-category-header">
-            <span class="index-num">02</span>
-            <h2>Regenerative</h2>
-            <p>Cellular-level repair, targeted signaling, and tissue support.</p>
-          </header>
-          <ul class="index-list">
-            <li class="index-item">
-              <span class="item-head">
-                <strong>Advanced Regenerative Therapies</strong>
-                <span class="pillars">Regenerate</span>
-              </span>
-              <span class="item-desc">Cellular-level protocols that support joint function, tissue, and long-term vitality.</span>
-            </li>
-            <li class="index-item">
-              <span class="item-head">
-                <strong>Peptide Therapy</strong>
-                <span class="pillars">Perform · Protect · Regenerate · Aesthetics</span>
-              </span>
-              <span class="item-desc">Precision signaling protocols that support metabolic, recovery, and hormonal goals.</span>
-            </li>
-            <li class="index-item">
-              <span class="item-head">
-                <strong>Hair Restoration</strong>
-                <span class="pillars">Aesthetics</span>
-              </span>
-              <span class="item-desc">Follicle support and scalp circulation protocols.</span>
-            </li>
-            <li class="index-item">
-              <span class="item-head">
-                <strong>Shockwave Therapy</strong>
-                <span class="pillars">Restore · Regenerate</span>
-              </span>
-              <span class="item-desc">Acoustic wave therapy that supports tissue repair.</span>
-            </li>
-            <li class="index-item">
-              <span class="item-head">
-                <strong>Regenerative Facials</strong>
-                <span class="pillars">Aesthetics</span>
-              </span>
-              <span class="item-desc">Cosmetic facials paired with red light for appearance support. Individual experiences vary.</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Recovery & Light -->
-        <div class="index-category">
-          <header class="index-category-header">
-            <span class="index-num">03</span>
-            <h2>Recovery &amp; Light</h2>
-            <p>Daily recovery suite, light-based therapies, and circulation support.</p>
-          </header>
-          <ul class="index-list">
-            <li class="index-item">
-              <span class="item-head">
-                <strong>Red Light Therapy</strong>
-                <span class="pillars">Restore · Perform · Protect · Aesthetics</span>
-              </span>
-              <span class="item-desc">Full-body mitochondrial support for skin, recovery, and energy.</span>
-            </li>
-            <li class="index-item">
-              <span class="item-head">
-                <strong>PEMF</strong>
-                <span class="pillars">Restore</span>
-              </span>
-              <span class="item-desc">Pulsed electromagnetic field therapy that supports cellular recovery.</span>
-            </li>
-            <li class="index-item">
-              <span class="item-head">
-                <strong>Infrared Pod</strong>
-                <span class="pillars">Restore · Protect</span>
-              </span>
-              <span class="item-desc">Deep heat therapy that supports circulation and detoxification.</span>
-            </li>
-            <li class="index-item">
-              <span class="item-head">
-                <strong>Cold Plunge</strong>
-                <span class="pillars">Perform · Protect</span>
-              </span>
-              <span class="item-desc">Cold immersion that supports recovery and nervous-system resilience.</span>
-            </li>
-            <li class="index-item">
-              <span class="item-head">
-                <strong>Lymphatic Compression</strong>
-                <span class="pillars">Weight Loss · Aesthetics</span>
-              </span>
-              <span class="item-desc">Compression therapy that supports lymphatic drainage.</span>
-            </li>
-            <li class="index-item">
-              <span class="item-head">
-                <strong>Compression Boots</strong>
-                <span class="pillars">Perform · Restore</span>
-              </span>
-              <span class="item-desc">Leg compression for circulation and recovery.</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Metabolic & Aesthetics -->
-        <div class="index-category">
-          <header class="index-category-header">
-            <span class="index-num">04</span>
-            <h2>Metabolic &amp; Aesthetics</h2>
-            <p>Body composition, metabolic correction, and surface-level care.</p>
-          </header>
-          <ul class="index-list">
-            <li class="index-item">
-              <span class="item-head">
-                <strong>Weight Optimization</strong>
-                <span class="pillars">Weight Loss</span>
-              </span>
-              <span class="item-desc">Metabolic correction using light, GLP support, and InBody-guided tracking. Individual experiences vary.</span>
-            </li>
-            <li class="index-item">
-              <span class="item-head">
-                <strong>Green Laser (Emerald)</strong>
-                <span class="pillars">Weight Loss</span>
-              </span>
-              <span class="item-desc">Non-invasive fat mobilization using green laser light.</span>
-            </li>
-            <li class="index-item">
-              <span class="item-head">
-                <strong>M-Sculpting</strong>
-                <span class="pillars">Weight Loss · Aesthetics</span>
-              </span>
-              <span class="item-desc">Muscle stimulation for tone and definition.</span>
-            </li>
-            <li class="index-item">
-              <span class="item-head">
-                <strong>Endospheres</strong>
-                <span class="pillars">Weight Loss · Aesthetics</span>
-              </span>
-              <span class="item-desc">Vibrational therapy that supports lymphatic drainage and skin tone.</span>
-            </li>
-            <li class="index-item">
-              <span class="item-head">
-                <strong>Mini Facial + Skin Analysis</strong>
-                <span class="pillars">Aesthetics</span>
-              </span>
-              <span class="item-desc">Cosmetic facial with a surface-level skin analysis.</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Diagnostics -->
-        <div class="index-category">
-          <header class="index-category-header">
-            <span class="index-num">05</span>
-            <h2>Diagnostics</h2>
-            <p>Measurement-first tools. The data that shapes every protocol.</p>
-          </header>
-          <ul class="index-list">
-            <li class="index-item">
-              <span class="item-head">
-                <strong>PNOĒ Metabolic Test</strong>
-                <span class="pillars">Perform · Protect · Weight Loss</span>
-              </span>
-              <span class="item-desc">Clinical-grade metabolic analysis from a single breath test.</span>
-            </li>
-            <li class="index-item">
-              <span class="item-head">
-                <strong>InBody Scan</strong>
-                <span class="pillars">Weight Loss</span>
-              </span>
-              <span class="item-desc">Body composition analysis — muscle, fat, water distribution.</span>
-            </li>
-            <li class="index-item">
-              <span class="item-head">
-                <strong>Blood Panel</strong>
-                <span class="pillars">Protect</span>
-              </span>
-              <span class="item-desc">Standard comprehensive blood work as a baseline reference.</span>
-            </li>
-          </ul>
-        </div>
-
-        <div class="index-footer-cta">
-          <p>Not sure where to start?</p>
-          <h3>Every member starts with EBOO.</h3>
-          <p class="section-sub">A clean foundation makes every protocol that follows actually land. Book your first session or talk to a member of our team.</p>
-          <div class="hero-cta">
-            <a href="contact.html#book" class="btn btn-primary">Book Your First Session</a>
-            <a href="index.html#ecosystem" class="btn btn-ghost">Back to the Ecosystem ↑</a>
+        <div class="founder-card">
+          <div class="founder-photo"><span>PORTRAIT · GEORGE KALTNER</span></div>
+          <div class="founder-copy">
+            <span class="eyebrow">Founder &amp; CEO</span>
+            <h2>George Kaltner</h2>
+            <p class="founder-bio">&ldquo;Nobody should have to live with chronic pain, stay overweight, or suffer through inflammation simply because the solutions are too expensive. For years, regenerative therapies have been cost-prohibitive &mdash; available only to the elite. We are here to change that.&rdquo;</p>
+            <p class="founder-role">Founder, Cellebration &middot; Miami, FL</p>
           </div>
         </div>
-
       </div>
     </section>
 
-    <!-- ============================================================
-         PERSISTENT LEAD-GEN FORM
-         ============================================================ -->
+    <section class="team-grid-section">
+      <div class="container">
+        <header class="section-header">
+          <span class="eyebrow">Clinical Team</span>
+          <h2 class="section-title">Florida team.</h2>
+          <p class="section-sub">Both clinics share one clinical team across Sunny Isles and Sunset Harbour.</p>
+        </header>
+        <div class="team-grid">
+          <article class="team-card">
+            <div class="team-photo"><span>PHOTO</span></div>
+            <strong>Dr. Felix Lurye</strong>
+            <span>Chief Medical Officer</span>
+          </article>
+          <article class="team-card">
+            <div class="team-photo"><span>PHOTO</span></div>
+            <strong>Lisa Steer</strong>
+            <span>Chief Nursing Operations</span>
+          </article>
+          <article class="team-card">
+            <div class="team-photo"><span>PHOTO</span></div>
+            <strong>Dr. Lee</strong>
+            <span>Physician</span>
+          </article>
+          <article class="team-card">
+            <div class="team-photo"><span>PHOTO</span></div>
+            <strong>Dr. Laurie</strong>
+            <span>Physician</span>
+          </article>
+          <article class="team-card">
+            <div class="team-photo"><span>PHOTO</span></div>
+            <strong>Lisa, NP</strong>
+            <span>Nurse Practitioner · &ldquo;Ask Lisa&rdquo;</span>
+          </article>
+          <article class="team-card">
+            <div class="team-photo"><span>PHOTO</span></div>
+            <strong>Diana Garcia, RN</strong>
+            <span>Registered Nurse</span>
+          </article>
+          <article class="team-card">
+            <div class="team-photo"><span>PHOTO</span></div>
+            <strong>Amanda</strong>
+            <span>Practice Manager</span>
+          </article>
+          <article class="team-card">
+            <div class="team-photo"><span>PHOTO</span></div>
+            <strong>Carragan Langley</strong>
+            <span>VP, Business Development &amp; Clinical Partnerships</span>
+          </article>
+          <article class="team-card">
+            <div class="team-photo"><span>PHOTO</span></div>
+            <strong>Steven</strong>
+            <span>Clinical Technician</span>
+          </article>
+          <article class="team-card">
+            <div class="team-photo"><span>PHOTO</span></div>
+            <strong>Chase</strong>
+            <span>Clinical Technician</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="lead-gen" id="lead">
       <div class="container">
         <div class="lead-inner">
@@ -522,10 +329,7 @@
       </div>
     </section>
 
-    <!-- ============================================================
-         FOOTER
-         ============================================================ -->
-    <footer class="site-footer" id="contact">
+    <footer class="site-footer">
       <div class="container">
         <div class="footer-top">
           <a href="index.html" class="logo logo-footer">
@@ -556,6 +360,7 @@
           <div class="footer-col">
             <h5>Memberships</h5>
             <ul>
+              <li><a href="memberships.html">Compare All</a></li>
               <li><a href="cellebration-club.html">Cellebration Club</a></li>
               <li><a href="cellebration-club-unlimited.html">Club Unlimited</a></li>
               <li><a href="hyper-club.html">Hyper Club</a></li>
@@ -565,8 +370,8 @@
             <h5>Explore</h5>
             <ul>
               <li><a href="services-all.html">All Services</a></li>
-              <li><a href="services-all.html">EBOO</a></li>
-              <li><a href="services-all.html">HBOT</a></li>
+              <li><a href="restore.html">EBOO</a></li>
+              <li><a href="restore.html">HBOT</a></li>
               <li><a href="services-all.html">IV Therapy</a></li>
               <li><a href="services-all.html">PNOĒ</a></li>
             </ul>
@@ -600,20 +405,17 @@
   </main>
 
   <script>
-    // Theme switcher — persists selection to sessionStorage
     (function () {
       var html = document.documentElement;
       var buttons = document.querySelectorAll('[data-theme]');
       var stored = sessionStorage.getItem('cellebration-theme');
       if (stored) setTheme(stored);
-
       buttons.forEach(function (btn) {
         btn.addEventListener('click', function () {
           setTheme(btn.dataset.theme);
           sessionStorage.setItem('cellebration-theme', btn.dataset.theme);
         });
       });
-
       function setTheme(t) {
         html.className = 'theme-' + t;
         buttons.forEach(function (b) {
@@ -622,24 +424,18 @@
       }
     })();
 
-    // Shrink nav on scroll
     (function () {
       var nav = document.getElementById('siteNav');
       window.addEventListener('scroll', function () {
-        if (window.scrollY > 32) {
-          nav.classList.add('scrolled');
-        } else {
-          nav.classList.remove('scrolled');
-        }
+        if (window.scrollY > 32) nav.classList.add('scrolled');
+        else nav.classList.remove('scrolled');
       }, { passive: true });
     })();
 
-    // Mobile drawer
     (function () {
       var toggle = document.querySelector('.mobile-toggle');
       var drawer = document.getElementById('mobileDrawer');
       if (!toggle || !drawer) return;
-
       function openDrawer() {
         drawer.classList.add('open');
         toggle.classList.add('open');
@@ -655,40 +451,29 @@
         document.body.style.overflow = '';
       }
       toggle.addEventListener('click', function () {
-        if (drawer.classList.contains('open')) {
-          closeDrawer();
-        } else {
-          openDrawer();
-        }
+        if (drawer.classList.contains('open')) closeDrawer();
+        else openDrawer();
       });
       drawer.querySelectorAll('[data-drawer-close]').forEach(function (el) {
         el.addEventListener('click', closeDrawer);
       });
       document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape' && drawer.classList.contains('open')) {
-          closeDrawer();
-        }
+        if (e.key === 'Escape' && drawer.classList.contains('open')) closeDrawer();
       });
       drawer.addEventListener('click', function (e) {
         if (e.target === drawer) closeDrawer();
       });
     })();
 
-    // Desktop dropdown click-toggle (touch + keyboard fallback)
     (function () {
       var triggers = document.querySelectorAll('.has-mega, .has-dropdown');
       if (!triggers.length) return;
-
       function closeAll(except) {
-        triggers.forEach(function (t) {
-          if (t !== except) t.classList.remove('is-open');
-        });
+        triggers.forEach(function (t) { if (t !== except) t.classList.remove('is-open'); });
       }
-
       triggers.forEach(function (item) {
         var link = item.querySelector('.nav-link');
         if (!link) return;
-
         link.addEventListener('click', function (e) {
           var wasOpen = item.classList.contains('is-open');
           if (!wasOpen) {
@@ -699,20 +484,13 @@
             item.classList.remove('is-open');
           }
         });
-
-        item.addEventListener('mouseleave', function () {
-          item.classList.remove('is-open');
-        });
+        item.addEventListener('mouseleave', function () { item.classList.remove('is-open'); });
       });
-
       document.addEventListener('click', function (e) {
         var inside = false;
-        triggers.forEach(function (t) {
-          if (t.contains(e.target)) inside = true;
-        });
+        triggers.forEach(function (t) { if (t.contains(e.target)) inside = true; });
         if (!inside) closeAll(null);
       });
-
       document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape') closeAll(null);
       });
