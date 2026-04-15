@@ -27,8 +27,14 @@ ul { list-style: none; padding: 0; margin: 0; }
 
 /* Common tokens */
 :root {
-  --font-heading: 'Space Grotesk', 'Inter', sans-serif;
-  --font-body: 'Inter', sans-serif;
+  /* Type system — Zalando (display) + Inter (everything else)
+     Zalando Sans isn't free-licensed so we use Unbounded as the closest
+     public match: wide geometric, confident weights, modern rounded forms.
+     If/when Zalando font files are available, swap --font-display to
+     'Zalando Sans' and the rest of the system picks it up automatically. */
+  --font-display: 'Unbounded', 'Archivo Black', 'Helvetica Neue', Arial, sans-serif;
+  --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --radius-sm: 6px;
   --radius-md: 12px;
   --radius-lg: 20px;
@@ -197,37 +203,71 @@ section { padding: 96px 0; }
 
 /* ============================================================
    TYPOGRAPHY
+   Mapped directly from the brand guide:
+     · Zalando (display)  → H1 + callouts, uppercase, Black weight
+     · Inter (system)     → H2 Semibold Italic, body, subheadings, UI
+   Substituting Unbounded for Zalando until font files are available.
    ============================================================ */
 h1, h2, h3, h4, h5 {
   font-family: var(--font-heading);
   color: var(--heading);
   margin: 0;
   font-weight: 600;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.015em;
   line-height: 1.1;
 }
+
+/* DISPLAY H1 — hero, page titles.
+   Zalando Black, UPPERCASE, tight line-height. This is the loudest type
+   moment on the page. One per section. */
+.hero-title,
+.page-title {
+  font-family: var(--font-display);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  line-height: 0.95;
+  color: var(--heading);
+}
 .hero-title {
-  font-size: clamp(2.5rem, 6vw, 5rem);
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 1.05;
+  font-size: clamp(2.75rem, 6.5vw, 5.25rem);
 }
+.page-title {
+  font-size: clamp(2.5rem, 5vw, 4.25rem);
+  line-height: 1;
+}
+
+/* EDITORIAL H2 — section-titles.
+   Inter Semibold ITALIC, mixed case. Counterpoint to the loud display H1.
+   Feels like a pull quote or an editorial subhead. Distinctive. */
 .section-title {
-  font-size: clamp(2rem, 4.5vw, 3.25rem);
-  font-weight: 700;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-style: italic;
+  font-size: clamp(2rem, 4.2vw, 3.25rem);
   letter-spacing: -0.025em;
-  line-height: 1.08;
+  line-height: 1.1;
+  color: var(--heading);
 }
-h3 { font-size: 1.5rem; }
-h4 { font-size: 1.15rem; }
-h5 { font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.08em; }
+
+h3 { font-size: 1.5rem; font-weight: 600; }
+h4 { font-size: 1.15rem; font-weight: 600; }
+h5 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
 p { margin: 0; color: var(--text); }
 .section-sub {
   font-size: 1.125rem;
   color: var(--text-soft);
-  max-width: 58ch;
+  max-width: 62ch;
   line-height: 1.55;
+  text-wrap: balance;
 }
+
+/* EYEBROW — small uppercase label (eg "CORE FOUNDATION"). Inter 600. */
 .eyebrow {
   display: inline-block;
   font-family: var(--font-heading);
@@ -240,13 +280,31 @@ p { margin: 0; color: var(--text); }
 }
 .eyebrow.centered { display: block; text-align: center; }
 
+/* CALLOUT — Zalando Bold uppercase in accent color.
+   For inline service labels like "HYPERBARIC OXYGEN THERAPY (HBOT):". */
+.callout {
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  color: var(--accent);
+  line-height: 1.2;
+}
+
 .section-header {
-  max-width: 720px;
+  max-width: 760px;
   margin: 0 auto 64px auto;
   text-align: center;
 }
 .section-header .section-title { margin-bottom: 16px; }
 .section-header .eyebrow { display: block; }
+/* Inside a centered section-header, physically center the block so
+   max-width + text-align actually line up. Also balance the wrap. */
+.section-header .section-sub {
+  margin: 0 auto;
+  max-width: 60ch;
+  text-wrap: balance;
+}
 .section-cta {
   text-align: center;
   margin-top: 56px;
@@ -465,7 +523,7 @@ p { margin: 0; color: var(--text); }
   display: flex;
   align-items: center;
   gap: 10px;
-  font-family: var(--font-heading);
+  font-family: var(--font-display);
   font-weight: 700;
   color: var(--heading);
   letter-spacing: 0.14em;
@@ -862,18 +920,90 @@ p { margin: 0; color: var(--text); }
 }
 
 /* ============================================================
-   HERO
+   HERO  ·  FULL-BLEED MASTHEAD with overlaid copy.
+   The <section.hero> no longer holds its own padding — the
+   hero-masthead is the hero. It stretches 100vw edge to edge,
+   clamps to a tall aspect ratio, and the copy sits centered
+   on top of it over a gradient scrim.
    ============================================================ */
 .hero {
   position: relative;
-  padding: 128px 0 112px 0;
+  padding: 0;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+/* The masthead itself — full-bleed, tall, gradient-backed */
+.hero-masthead {
+  position: relative;
+  width: 100%;
+  min-height: 720px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
   background: var(--hero-bg);
+  isolation: isolate;
 }
+@media (max-width: 900px) {
+  .hero-masthead { min-height: 620px; }
+}
+@media (max-width: 640px) {
+  .hero-masthead { min-height: 560px; }
+}
+
+/* Subtle "texture" animation — two large, slowly-drifting conic
+   gradients that feel like refracted light on glass. The whole
+   thing lives behind the hero copy so it never steals focus. */
+.hero-masthead-texture {
+  position: absolute;
+  inset: -20%;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 60% 50% at 20% 30%, rgba(255,255,255,0.18), rgba(255,255,255,0) 60%),
+    radial-gradient(ellipse 55% 45% at 80% 70%, rgba(255,255,255,0.12), rgba(255,255,255,0) 55%),
+    conic-gradient(from 0deg at 50% 50%, rgba(255,255,255,0.05), rgba(255,255,255,0.14), rgba(255,255,255,0.02), rgba(255,255,255,0.09), rgba(255,255,255,0.05));
+  filter: blur(40px);
+  animation: masthead-drift 28s ease-in-out infinite alternate;
+  mix-blend-mode: soft-light;
+  opacity: 0.85;
+}
+@keyframes masthead-drift {
+  0%   { transform: translate3d(0, 0, 0) rotate(0deg) scale(1); }
+  50%  { transform: translate3d(2%, -1.2%, 0) rotate(4deg) scale(1.04); }
+  100% { transform: translate3d(-1.8%, 1.4%, 0) rotate(-3deg) scale(1.02); }
+}
+
+/* Secondary grain layer — an offset conic for just enough motion
+   that the composition never feels flat. */
+.hero-masthead-grain {
+  position: absolute;
+  inset: -15%;
+  z-index: 0;
+  pointer-events: none;
+  background: conic-gradient(from 180deg at 60% 40%, rgba(255,255,255,0.06), rgba(255,255,255,0) 30%, rgba(255,255,255,0.08) 60%, rgba(255,255,255,0) 100%);
+  filter: blur(60px);
+  animation: masthead-grain 38s linear infinite;
+  mix-blend-mode: overlay;
+  opacity: 0.6;
+}
+@keyframes masthead-grain {
+  from { transform: rotate(0deg) scale(1.05); }
+  to   { transform: rotate(360deg) scale(1.05); }
+}
+
+/* Accessibility — honor users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero-masthead-texture,
+  .hero-masthead-grain { animation: none; }
+}
+
 .hero-bg {
   position: absolute;
   inset: 0;
   pointer-events: none;
+  z-index: 0;
 }
 .hero-orb {
   position: absolute;
@@ -884,27 +1014,36 @@ p { margin: 0; color: var(--text); }
   background: var(--orb-bg);
   filter: blur(40px);
 }
+
+/* Hero copy — sits on top of the masthead, centered */
 .hero-inner {
   position: relative;
+  z-index: 2;
   text-align: center;
-  max-width: 860px;
+  max-width: 940px;
+  padding: 160px 32px 140px 32px;
+}
+@media (max-width: 640px) {
+  .hero-inner { padding: 140px 24px 120px 24px; }
 }
 .hero-title {
   color: var(--heading);
-  margin: 10px 0 24px 0;
+  margin: 0 0 18px 0;
+}
+.hero-attribution {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  color: var(--text-soft);
+  font-style: italic;
+  margin: 0 0 28px 0;
+  letter-spacing: 0.02em;
 }
 .hero-sub {
   font-size: clamp(1.1rem, 1.6vw, 1.375rem);
   color: var(--text-soft);
   max-width: 44ch;
-  margin: 0 auto 16px auto;
+  margin: 0 auto 40px auto;
   line-height: 1.55;
-}
-.hero-attribution {
-  font-size: 0.95rem;
-  color: var(--text-soft);
-  font-style: italic;
-  margin: 0 0 40px 0;
 }
 .hero-cta {
   display: flex;
@@ -912,63 +1051,71 @@ p { margin: 0; color: var(--text); }
   justify-content: center;
   flex-wrap: wrap;
 }
-@media (max-width: 640px) {
-  .hero { padding: 96px 0 80px 0; }
-}
 
-/* Hero masthead media placeholder (visible so George can point at it) */
-.hero-masthead {
-  margin-top: 64px;
-  max-width: 980px;
-  margin-left: auto;
-  margin-right: auto;
-  aspect-ratio: 16 / 9;
-  background: var(--pillar-bg);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
+/* Pending-sign-off flag in the corner of the masthead — replaces
+   the old center-stack play button. Compact, unobtrusive. */
+.hero-masthead-flag {
+  position: absolute;
+  left: 32px;
+  bottom: 28px;
+  z-index: 2;
   display: flex;
   align-items: center;
-  justify-content: center;
-  position: relative;
+  gap: 12px;
+  padding: 10px 14px 10px 10px;
+  background: rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  max-width: calc(100% - 64px);
 }
-.hero-masthead-inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 14px;
-  position: relative;
-  z-index: 1;
-  text-align: center;
+@media (max-width: 640px) {
+  .hero-masthead-flag {
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    max-width: calc(100% - 40px);
+  }
 }
-.hero-masthead-play {
-  width: 86px;
-  height: 86px;
+.hero-masthead-flag .hero-masthead-play {
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.18);
-  border: 2px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
-  color: var(--pillar-text);
-  padding-left: 7px;
+  font-size: 0.62rem;
+  color: #fff;
+  padding-left: 2px;
+  flex-shrink: 0;
 }
-.hero-masthead-label {
+.hero-masthead-flag .hero-masthead-label {
   font-family: var(--font-heading);
-  font-size: 0.85rem;
+  font-size: 0.65rem;
   font-weight: 600;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--pillar-text);
-  opacity: 0.85;
+  color: rgba(255, 255, 255, 0.92);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.hero-masthead-sub {
+.hero-masthead-flag .hero-masthead-sub {
   font-family: var(--font-heading);
-  font-size: 0.72rem;
-  letter-spacing: 0.1em;
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--pillar-text);
-  opacity: 0.55;
+  color: rgba(255, 255, 255, 0.65);
+  border-left: 1px solid rgba(255, 255, 255, 0.22);
+  padding-left: 12px;
+  white-space: nowrap;
+}
+@media (max-width: 720px) {
+  .hero-masthead-flag .hero-masthead-sub { display: none; }
 }
 
 /* As Seen In pending-legal flag */
@@ -981,21 +1128,43 @@ p { margin: 0; color: var(--text); }
 }
 .seen-in-note em { opacity: 0.85; }
 
-/* Wireframe-mode overrides for the new elements */
+/* Wireframe-mode overrides for the masthead — grayscale, dashed,
+   and very subtle drifting striped placeholder that reads as
+   "media slot" in grayscale. */
 .theme-wire .hero-masthead {
-  background: #E5E5EA;
-  border: 1.5px dashed #AEAEB2;
+  background: #EDEDF0;
+  border-top: 1.5px dashed #AEAEB2;
+  border-bottom: 1.5px dashed #AEAEB2;
 }
-.theme-wire .hero-masthead-play {
+.theme-wire .hero-masthead-texture {
+  background:
+    repeating-linear-gradient(135deg, rgba(142,142,147,0.10) 0 1px, transparent 1px 28px),
+    radial-gradient(ellipse 60% 50% at 20% 30%, rgba(142,142,147,0.18), rgba(142,142,147,0) 60%),
+    radial-gradient(ellipse 55% 45% at 80% 70%, rgba(142,142,147,0.14), rgba(142,142,147,0) 55%);
+  mix-blend-mode: normal;
+  opacity: 0.9;
+  filter: none;
+}
+.theme-wire .hero-masthead-grain { opacity: 0; }
+.theme-wire .hero-masthead-flag {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: #8E8E93;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+.theme-wire .hero-masthead-flag .hero-masthead-play {
   background: transparent;
   border-color: #8E8E93;
   color: #636366;
 }
-.theme-wire .hero-masthead-label,
-.theme-wire .hero-masthead-sub {
-  color: #636366;
-  opacity: 1;
+.theme-wire .hero-masthead-flag .hero-masthead-label {
+  color: #3A3A3C;
   font-family: 'Courier New', monospace;
+}
+.theme-wire .hero-masthead-flag .hero-masthead-sub {
+  color: #636366;
+  font-family: 'Courier New', monospace;
+  border-color: #C7C7CC;
 }
 .theme-wire .seen-in-note { color: #8E8E93; }
 
@@ -1025,11 +1194,18 @@ p { margin: 0; color: var(--text); }
   transition: transform 0.28s var(--ease), box-shadow 0.28s var(--ease), border-color 0.28s ease;
   display: flex;
   flex-direction: column;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
 }
 .pillar-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
   border-color: var(--accent);
+}
+.pillar-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }
 .pillar-image {
   aspect-ratio: 4 / 3;
@@ -1061,6 +1237,12 @@ p { margin: 0; color: var(--text); }
 .pillar-card h3 {
   padding: 22px 24px 4px 24px;
   color: var(--heading);
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  font-size: 1.35rem;
+  line-height: 1.1;
 }
 .pillar-card p {
   padding: 0 24px 14px 24px;
@@ -1254,7 +1436,12 @@ p { margin: 0; color: var(--text); }
 .service-card h4 {
   color: var(--heading);
   margin-bottom: 10px;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  line-height: 1.1;
 }
 .service-card p {
   font-size: 0.9rem;
@@ -1273,7 +1460,10 @@ p { margin: 0; color: var(--text); }
 }
 
 /* ============================================================
-   AS SEEN IN
+   AS SEEN IN  ·  Seamless marquee loop
+   The track holds 2x the logos and translates by -50% so the
+   second copy lines up perfectly with the first — no visible
+   reset, no gap. Pause on hover. Honors reduced motion.
    ============================================================ */
 .seen-in {
   background: var(--bg-section);
@@ -1281,13 +1471,33 @@ p { margin: 0; color: var(--text); }
   border-top: 1px solid var(--border-soft);
   border-bottom: 1px solid var(--border-soft);
 }
-.logo-wall {
+.logo-marquee {
+  position: relative;
+  margin: 32px 0 0 0;
+  overflow: hidden;
+  width: 100%;
+  /* Fade the edges so logos ease in/out of the viewport */
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 10%, #000 90%, transparent 100%);
+          mask-image: linear-gradient(90deg, transparent 0, #000 10%, #000 90%, transparent 100%);
+}
+.logo-marquee-track {
   display: flex;
-  justify-content: space-around;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 40px;
-  margin-top: 32px;
+  gap: 72px;
+  width: max-content;
+  padding: 8px 36px;
+  animation: logo-marquee 40s linear infinite;
+  will-change: transform;
+}
+.logo-marquee:hover .logo-marquee-track {
+  animation-play-state: paused;
+}
+@keyframes logo-marquee {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-50%, 0, 0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .logo-marquee-track { animation: none; }
 }
 .logo-ph {
   font-family: var(--font-heading);
@@ -1296,6 +1506,8 @@ p { margin: 0; color: var(--text); }
   color: var(--text-soft);
   font-size: 0.95rem;
   opacity: 0.7;
+  white-space: nowrap;
+  flex-shrink: 0;
   transition: opacity 0.2s ease;
 }
 .logo-ph:hover { opacity: 1; }
@@ -1990,49 +2202,26 @@ html { scroll-behavior: smooth; }
 .index-category:first-child { padding-top: 0; }
 .index-category:last-of-type { border-bottom: none; padding-bottom: 48px; }
 .index-category-header {
-  display: grid;
-  grid-template-columns: 72px 1fr;
-  gap: 20px 24px;
+  display: block;
+  max-width: 780px;
   margin-bottom: 32px;
-  align-items: baseline;
-}
-.index-num {
-  font-family: var(--font-heading);
-  font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  color: var(--accent);
-  grid-row: 1;
-  padding-top: 8px;
 }
 .index-category-header h2 {
   font-family: var(--font-heading);
   font-size: clamp(1.75rem, 3.2vw, 2.5rem);
   font-weight: 700;
+  font-style: italic;
   letter-spacing: -0.025em;
   line-height: 1.1;
   color: var(--heading);
-  margin: 0;
-  grid-column: 2;
-  grid-row: 1;
+  margin: 0 0 12px 0;
 }
 .index-category-header p {
-  grid-column: 2;
-  grid-row: 2;
   color: var(--text-soft);
   font-size: 1rem;
   max-width: 58ch;
   margin: 0;
   line-height: 1.55;
-}
-@media (max-width: 640px) {
-  .index-category-header {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-  .index-category-header h2,
-  .index-category-header p { grid-column: 1; }
-  .index-num { grid-row: auto; padding-top: 0; }
 }
 .index-list {
   display: grid;
@@ -2166,11 +2355,12 @@ html { scroll-behavior: smooth; }
   opacity: 0.75;
 }
 .founder-copy h2 {
-  font-family: var(--font-heading);
+  font-family: var(--font-display);
   font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 700;
-  letter-spacing: -0.025em;
-  line-height: 1.1;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  line-height: 0.98;
   color: var(--heading);
   margin: 10px 0 24px 0;
 }
@@ -2277,12 +2467,15 @@ html { scroll-behavior: smooth; }
   font-weight: 600;
 }
 .clinic-card h2 {
-  font-family: var(--font-heading);
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.005em;
+  font-style: normal;
   color: var(--heading);
   margin: 0 0 16px 0;
+  line-height: 1.05;
 }
 .clinic-address {
   font-size: 1.05rem;
@@ -2436,13 +2629,15 @@ html { scroll-behavior: smooth; }
 }
 .membership-header .eyebrow { display: block; }
 .membership-header h2 {
-  font-family: var(--font-heading);
-  font-size: 1.75rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.005em;
+  font-style: normal;
   color: var(--heading);
   margin: 6px 0 10px 0;
-  line-height: 1.15;
+  line-height: 1.1;
 }
 .membership-positioning {
   font-size: 0.95rem;
@@ -2834,12 +3029,14 @@ html { scroll-behavior: smooth; }
   margin-bottom: 8px;
 }
 .hyper-card h3 {
-  font-family: var(--font-heading);
-  font-size: 1.75rem;
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
   color: var(--heading);
   margin: 0 0 14px 0;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.005em;
+  line-height: 1.1;
 }
 .hyper-card p {
   color: var(--text-soft);
@@ -2968,12 +3165,14 @@ html { scroll-behavior: smooth; }
 }
 .pillar-upsell .eyebrow { color: var(--accent); display: block; margin-bottom: 8px; }
 .pillar-upsell h3 {
-  font-family: var(--font-heading);
-  font-size: 1.6rem;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 800;
+  text-transform: uppercase;
   color: #FFF;
   margin: 0 0 16px 0;
-  letter-spacing: -0.02em;
-  line-height: 1.15;
+  letter-spacing: -0.005em;
+  line-height: 1.1;
 }
 .pillar-upsell p {
   color: rgba(255, 255, 255, 0.82);

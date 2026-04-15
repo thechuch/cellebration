@@ -7,7 +7,7 @@
   <title>Cellebration — Website Wireframe</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600;1,700&family=Unbounded:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -212,29 +212,28 @@
   <main id="top">
 
     <!-- ============================================================
-         BLOCK 1 · HERO
+         BLOCK 1 · HERO (full-bleed masthead + overlaid copy)
          ============================================================ -->
-    <section class="hero">
-      <div class="hero-bg" aria-hidden="true">
-        <div class="hero-orb"></div>
-      </div>
-      <div class="container hero-inner">
-        <span class="eyebrow">Founder-led · Two South Florida Clinics</span>
-        <h1 class="hero-title">Health and Longevity for Everyone.</h1>
-        <p class="hero-sub">Regenerative medicine without the luxury markup. Memberships start at $99 / month.</p>
-        <p class="hero-attribution">— George Kaltner, Founder &amp; CEO</p>
-        <div class="hero-cta">
-          <a href="contact.html#book" class="btn btn-primary">Book Your Consultation</a>
-          <a href="#ecosystem" class="btn btn-ghost">Explore the Ecosystem ↓</a>
+    <section class="hero hero-masthead-wrap">
+      <div class="hero-masthead" aria-label="Masthead media placeholder">
+        <div class="hero-masthead-texture" aria-hidden="true"></div>
+        <div class="hero-masthead-grain" aria-hidden="true"></div>
+        <div class="hero-bg" aria-hidden="true">
+          <div class="hero-orb"></div>
         </div>
-      </div>
-      <div class="container">
-        <div class="hero-masthead" aria-label="Masthead media placeholder">
-          <div class="hero-masthead-inner">
-            <span class="hero-masthead-play" aria-hidden="true">▶</span>
-            <span class="hero-masthead-label">Masthead Media · Video Loop or Still Image</span>
-            <span class="hero-masthead-sub">Decision pending client sign-off</span>
+        <div class="container hero-inner">
+          <h1 class="hero-title">Health and Longevity for Everyone.</h1>
+          <p class="hero-attribution">— George Kaltner, Founder &amp; CEO</p>
+          <p class="hero-sub">Regenerative medicine without the luxury markup. Memberships start at $99 / month.</p>
+          <div class="hero-cta">
+            <a href="contact.html#book" class="btn btn-primary">Book Your Consultation</a>
+            <a href="#ecosystem" class="btn btn-ghost">Explore the Ecosystem ↓</a>
           </div>
+        </div>
+        <div class="hero-masthead-flag" aria-hidden="true">
+          <span class="hero-masthead-play">▶</span>
+          <span class="hero-masthead-label">Masthead Media · Video Loop or Still Image</span>
+          <span class="hero-masthead-sub">Decision pending client sign-off</span>
         </div>
       </div>
     </section>
@@ -251,42 +250,42 @@
         </header>
 
         <div class="pillar-grid">
-          <article class="pillar-card" data-pillar="restore">
+          <a class="pillar-card" href="restore.html" data-pillar="restore">
             <div class="pillar-image"><span>RESTORE</span></div>
             <h3>Restore</h3>
             <p>Pain, inflammation, chronic conditions.</p>
             <span class="card-link">Learn more →</span>
-          </article>
-          <article class="pillar-card" data-pillar="perform">
+          </a>
+          <a class="pillar-card" href="perform.html" data-pillar="perform">
             <div class="pillar-image"><span>PERFORM</span></div>
             <h3>Perform</h3>
             <p>Athletic, cognitive, sexual, recovery.</p>
             <span class="card-link">Learn more →</span>
-          </article>
-          <article class="pillar-card" data-pillar="protect">
+          </a>
+          <a class="pillar-card" href="protect.html" data-pillar="protect">
             <div class="pillar-image"><span>PROTECT</span></div>
             <h3>Protect</h3>
             <p>Anti-aging, prevention, immune resilience.</p>
             <span class="card-link">Learn more →</span>
-          </article>
-          <article class="pillar-card" data-pillar="regenerate">
+          </a>
+          <a class="pillar-card" href="regenerate.html" data-pillar="regenerate">
             <div class="pillar-image"><span>REGENERATE</span></div>
             <h3>Regenerate</h3>
             <p>Tissue, joint, hormonal vitality.</p>
             <span class="card-link">Learn more →</span>
-          </article>
-          <article class="pillar-card" data-pillar="weight">
+          </a>
+          <a class="pillar-card" href="weight-loss.html" data-pillar="weight">
             <div class="pillar-image"><span>WEIGHT LOSS</span></div>
             <h3>Weight Loss</h3>
             <p>Metabolic correction, not crash dieting.</p>
             <span class="card-link">Learn more →</span>
-          </article>
-          <article class="pillar-card" data-pillar="aesthetics">
+          </a>
+          <a class="pillar-card" href="aesthetics-hair.html" data-pillar="aesthetics">
             <div class="pillar-image"><span>AESTHETICS &amp; HAIR</span></div>
             <h3>Aesthetics &amp; Hair</h3>
             <p>Structural renewal of skin and scalp.</p>
             <span class="card-link">Learn more →</span>
-          </article>
+          </a>
         </div>
 
         <div class="section-cta">
@@ -438,18 +437,33 @@
     </section>
 
     <!-- ============================================================
-         BLOCK 6 · AS SEEN IN
+         BLOCK 6 · AS SEEN IN (marquee)
          ============================================================ -->
     <section class="seen-in">
       <div class="container">
         <span class="eyebrow centered">As Seen In</span>
-        <div class="logo-wall">
+      </div>
+      <div class="logo-marquee" aria-label="Press coverage — scrolling logo wall">
+        <div class="logo-marquee-track">
+          <!-- Set A -->
           <span class="logo-ph">FORBES</span>
           <span class="logo-ph">BLOOMBERG</span>
           <span class="logo-ph">WIRED</span>
           <span class="logo-ph">MEN&rsquo;S HEALTH</span>
           <span class="logo-ph">BIOHACKERS MAGAZINE</span>
+          <span class="logo-ph">FAST COMPANY</span>
+          <span class="logo-ph">OUTSIDE</span>
+          <!-- Set B (duplicate for seamless loop) -->
+          <span class="logo-ph" aria-hidden="true">FORBES</span>
+          <span class="logo-ph" aria-hidden="true">BLOOMBERG</span>
+          <span class="logo-ph" aria-hidden="true">WIRED</span>
+          <span class="logo-ph" aria-hidden="true">MEN&rsquo;S HEALTH</span>
+          <span class="logo-ph" aria-hidden="true">BIOHACKERS MAGAZINE</span>
+          <span class="logo-ph" aria-hidden="true">FAST COMPANY</span>
+          <span class="logo-ph" aria-hidden="true">OUTSIDE</span>
         </div>
+      </div>
+      <div class="container">
         <p class="seen-in-note"><em>Logo usage pending rights confirmation.</em></p>
       </div>
     </section>
@@ -488,8 +502,8 @@
     <section class="social-proof">
       <div class="container">
         <header class="section-header">
-          <span class="eyebrow">What patients are saying</span>
-          <h2 class="section-title">From Google &amp; Instagram.</h2>
+          <span class="eyebrow">Patient Voices</span>
+          <h2 class="section-title">What patients are saying.</h2>
         </header>
 
         <div class="reviews-grid">
