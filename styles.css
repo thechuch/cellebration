@@ -96,84 +96,86 @@ ul { list-style: none; padding: 0; margin: 0; }
 }
 
 /* ---------- Theme A2 · REGENERATIVE · MIDNIGHT ----------
-   Dark Navy canvas (not black — this matters). Light Purple headings
-   and CTAs pop like neon against the navy. Body is a warm cream.
-   Palette: #171A4F Dark Navy / #DC8EEB Light Purple / #7F368A Dark Purple. */
+   Deep aubergine canvas derived from the Purple Gradient — NOT Dark Navy.
+   Light Purple headings + CTAs pop like neon. Body is warm cream.
+   Palette: #231028 deep aubergine / #7F368A Dark Purple / #DC8EEB Light Purple. */
 .theme-a2 {
-  --bg:          #171A4F;
-  --bg-alt:      #1E2360;
-  --bg-section:  #1A1E57;
-  --bg-elevated: #242A6D;
+  --bg:          #231028;
+  --bg-alt:      #2E1738;
+  --bg-section:  #281332;
+  --bg-elevated: #3B2148;
   --text:        #F0E8F5;
-  --text-soft:   #9F8FC5;
+  --text-soft:   #A890B8;
   --heading:     #DC8EEB;
   --brand:       #DC8EEB;
   --brand-soft:  #C76ED5;
   --accent:      #DC8EEB;
   --accent-hover:#C76ED5;
-  --border:      #2A2F6E;
-  --border-soft: #22275E;
-  --nav-bg:      rgba(23, 26, 79, 0.90);
+  --border:      #3F2250;
+  --border-soft: #321B3E;
+  --nav-bg:      rgba(35, 16, 40, 0.90);
   --nav-border:  rgba(220, 142, 235, 0.18);
   --pillar-bg:   linear-gradient(135deg, #7F368A 0%, #DC8EEB 100%);
   --pillar-text: #FFFFFF;
-  --hero-bg:     radial-gradient(ellipse at top, #242A6D 0%, #171A4F 65%);
-  --orb-bg:      radial-gradient(circle, rgba(220, 142, 235, 0.38), rgba(23, 26, 79, 0) 55%);
-  --cta-text:    #171A4F;
+  --hero-bg:     radial-gradient(ellipse at top, #3B2148 0%, #231028 65%);
+  --orb-bg:      radial-gradient(circle, rgba(220, 142, 235, 0.40), rgba(35, 16, 40, 0) 55%);
+  --cta-text:    #231028;
 }
 
-/* ---------- Theme B1 · PRECISION · DAYLIGHT ----------
-   Blue-led story, white canvas, charcoal body, True Cobalt headings,
-   Persian Blue primary CTAs, Light Blue as the accent highlight.
-   Palette: White / #292E8E True Cobalt / #373EBE Persian Blue / #76CBFD Light Blue. */
+/* ---------- Theme B1 · EDITORIAL · DAYLIGHT ----------
+   White canvas, neutral-first. Headings are near-black. Body is darker
+   charcoal than A1 for editorial feel. Purple appears ONLY on CTAs,
+   eyebrows, and the pillar gradient — focal accent, not hero voice.
+   Palette: White / #1A1A1A near-black / #7F368A Dark Purple / Lilac hints. */
 .theme-b1 {
   --bg:          #FFFFFF;
-  --bg-alt:      #F4FAFE;
+  --bg-alt:      #FAF8FC;
   --bg-section:  #FFFFFF;
   --bg-elevated: #FFFFFF;
-  --text:        #474747;
-  --text-soft:   #6B7A92;
-  --heading:     #292E8E;
-  --brand:       #373EBE;
-  --brand-soft:  #4D56CE;
-  --accent:      #373EBE;
-  --accent-hover:#292E8E;
-  --border:      #DDE7F3;
-  --border-soft: #EEF5FB;
+  --text:        #2A2A2A;
+  --text-soft:   #7A7380;
+  --heading:     #1A1A1A;
+  --brand:       #7F368A;
+  --brand-soft:  #A64FAD;
+  --accent:      #7F368A;
+  --accent-hover:#651F70;
+  --border:      #ECE8F0;
+  --border-soft: #F5F2F9;
   --nav-bg:      rgba(255, 255, 255, 0.94);
-  --nav-border:  rgba(41, 46, 142, 0.12);
-  --pillar-bg:   linear-gradient(135deg, #171A4F 0%, #373EBE 100%);
+  --nav-border:  rgba(26, 26, 26, 0.08);
+  --pillar-bg:   linear-gradient(135deg, #7F368A 0%, #DC8EEB 100%);
   --pillar-text: #FFFFFF;
-  --hero-bg:     linear-gradient(180deg, #FFFFFF 0%, #F4FAFE 100%);
-  --orb-bg:      radial-gradient(circle, rgba(118, 203, 253, 0.28), rgba(41, 46, 142, 0) 65%);
+  --hero-bg:     linear-gradient(180deg, #FFFFFF 0%, #FAF8FC 100%);
+  --orb-bg:      radial-gradient(circle, rgba(168, 148, 212, 0.16), rgba(127, 54, 138, 0) 65%);
   --cta-text:    #FFFFFF;
 }
 
-/* ---------- Theme B2 · PRECISION · MIDNIGHT ----------
-   Dark Navy canvas, True Cobalt alt surfaces, Light Blue as the neon
-   heading + CTA color. The diagnostic-dashboard mode.
-   Palette: #171A4F Dark Navy / #292E8E True Cobalt / #76CBFD Light Blue. */
+/* ---------- Theme B2 · EDITORIAL · MIDNIGHT ----------
+   Near-black canvas with subtle warmth. Near-white heading (NOT purple).
+   Cream body. Light Purple shows up only on CTAs and pillar gradient.
+   The reserved, text-first dark mode.
+   Palette: #1A1A1F near-black / #F8F4FA near-white / #DC8EEB Light Purple. */
 .theme-b2 {
-  --bg:          #171A4F;
-  --bg-alt:      #1E2566;
-  --bg-section:  #1A1E57;
-  --bg-elevated: #292E8E;
-  --text:        #E8F0FA;
-  --text-soft:   #8FA8C9;
-  --heading:     #76CBFD;
-  --brand:       #76CBFD;
-  --brand-soft:  #4CA8E3;
-  --accent:      #76CBFD;
-  --accent-hover:#4CA8E3;
-  --border:      #2A3470;
-  --border-soft: #232A60;
-  --nav-bg:      rgba(23, 26, 79, 0.90);
-  --nav-border:  rgba(118, 203, 253, 0.20);
-  --pillar-bg:   linear-gradient(135deg, #171A4F 0%, #76CBFD 100%);
+  --bg:          #1A1A1F;
+  --bg-alt:      #222228;
+  --bg-section:  #1E1E24;
+  --bg-elevated: #2B2B32;
+  --text:        #E8E4EC;
+  --text-soft:   #8E8A92;
+  --heading:     #F8F4FA;
+  --brand:       #DC8EEB;
+  --brand-soft:  #C76ED5;
+  --accent:      #DC8EEB;
+  --accent-hover:#C76ED5;
+  --border:      #33333B;
+  --border-soft: #27272E;
+  --nav-bg:      rgba(26, 26, 31, 0.90);
+  --nav-border:  rgba(220, 142, 235, 0.14);
+  --pillar-bg:   linear-gradient(135deg, #7F368A 0%, #DC8EEB 100%);
   --pillar-text: #FFFFFF;
-  --hero-bg:     radial-gradient(ellipse at top, #242C7D 0%, #171A4F 65%);
-  --orb-bg:      radial-gradient(circle, rgba(118, 203, 253, 0.35), rgba(23, 26, 79, 0) 55%);
-  --cta-text:    #171A4F;
+  --hero-bg:     radial-gradient(ellipse at top, #2B2B32 0%, #1A1A1F 65%);
+  --orb-bg:      radial-gradient(circle, rgba(220, 142, 235, 0.22), rgba(26, 26, 31, 0) 55%);
+  --cta-text:    #1A1A1F;
 }
 
 /* ============================================================
@@ -407,13 +409,13 @@ p { margin: 0; color: var(--text); }
     #8E8E93 3px 6px
   );
 }
-/* Swatches mirror each theme's defining color pair:
-   A = Regenerative (purple family), B = Precision (blue family)
-   1 = Daylight (white canvas), 2 = Midnight (dark navy canvas)   */
+/* Swatches mirror each theme's defining color pair.
+   A = Regenerative (purple-forward — color is the hero voice)
+   B = Editorial (neutral-first — purple is the focal accent)    */
 .swatch-a1 { background: linear-gradient(135deg, #FFFFFF 0%, #7F368A 60%, #DC8EEB 100%); }
-.swatch-a2 { background: linear-gradient(135deg, #171A4F 0%, #7F368A 60%, #DC8EEB 100%); }
-.swatch-b1 { background: linear-gradient(135deg, #FFFFFF 0%, #373EBE 60%, #76CBFD 100%); }
-.swatch-b2 { background: linear-gradient(135deg, #171A4F 0%, #373EBE 60%, #76CBFD 100%); }
+.swatch-a2 { background: linear-gradient(135deg, #231028 0%, #7F368A 55%, #DC8EEB 100%); }
+.swatch-b1 { background: linear-gradient(135deg, #FFFFFF 0%, #F5F2F9 40%, #1A1A1A 70%, #7F368A 100%); }
+.swatch-b2 { background: linear-gradient(135deg, #1A1A1F 0%, #2B2B32 60%, #DC8EEB 100%); }
 
 /* Mobile — same bottom-right pill, slightly inset */
 @media (max-width: 560px) {
