@@ -66,100 +66,114 @@ ul { list-style: none; padding: 0; margin: 0; }
   --cta-text:    #FFFFFF;
 }
 
-/* ---------- Theme A1 · Purple / Light ---------- */
+/* ---------- Theme A1 · REGENERATIVE · DAYLIGHT ----------
+   Purple-led story, white canvas, charcoal body. Dark Purple carries
+   headings AND primary CTAs (high contrast). Light Purple lives in the
+   pillar gradient, hero glow, and hover states where it glows decoratively.
+   Palette: White / #7F368A Dark Purple / #DC8EEB Light Purple / #474747 Charcoal. */
 .theme-a1 {
-  --bg:          #FAF7F0;
-  --bg-alt:      #F2ECDE;
+  --bg:          #FFFFFF;
+  --bg-alt:      #FAF5FD;
   --bg-section:  #FFFFFF;
   --bg-elevated: #FFFFFF;
-  --text:        #1F0D3A;
-  --text-soft:   #6B5B8A;
-  --heading:     #1F0D3A;
-  --brand:       #2E1A47;
-  --brand-soft:  #4A2B6E;
-  --accent:      #E91E63;
-  --accent-hover:#C2185B;
-  --border:      #E8DFC9;
-  --border-soft: #F1EAD4;
-  --nav-bg:      rgba(250, 247, 240, 0.92);
-  --nav-border:  rgba(46, 26, 71, 0.12);
-  --pillar-bg:   linear-gradient(135deg, #2E1A47 0%, #4A2B6E 100%);
-  --pillar-text: #FAF7F0;
-  --hero-bg:     linear-gradient(180deg, #FAF7F0 0%, #F2ECDE 100%);
-  --orb-bg:      radial-gradient(circle, rgba(233, 30, 99, 0.35), rgba(46, 26, 71, 0) 60%);
+  --text:        #474747;
+  --text-soft:   #7F6B87;
+  --heading:     #7F368A;
+  --brand:       #7F368A;
+  --brand-soft:  #A64FAD;
+  --accent:      #7F368A;       /* Dark Purple — passes AA on white for eyebrows + CTAs */
+  --accent-hover:#651F70;
+  --highlight:   #DC8EEB;        /* Light Purple — reserved for hover glow + gradient */
+  --border:      #EBDDF0;
+  --border-soft: #F5ECF9;
+  --nav-bg:      rgba(255, 255, 255, 0.94);
+  --nav-border:  rgba(127, 54, 138, 0.14);
+  --pillar-bg:   linear-gradient(135deg, #7F368A 0%, #DC8EEB 100%);
+  --pillar-text: #FFFFFF;
+  --hero-bg:     linear-gradient(180deg, #FFFFFF 0%, #FAF5FD 100%);
+  --orb-bg:      radial-gradient(circle, rgba(220, 142, 235, 0.35), rgba(127, 54, 138, 0) 60%);
   --cta-text:    #FFFFFF;
 }
 
-/* ---------- Theme A2 · Purple / Dark ---------- */
+/* ---------- Theme A2 · REGENERATIVE · MIDNIGHT ----------
+   Dark Navy canvas (not black — this matters). Light Purple headings
+   and CTAs pop like neon against the navy. Body is a warm cream.
+   Palette: #171A4F Dark Navy / #DC8EEB Light Purple / #7F368A Dark Purple. */
 .theme-a2 {
-  --bg:          #15081F;
-  --bg-alt:      #1F0D3A;
-  --bg-section:  #1A0A2A;
-  --bg-elevated: #26133F;
+  --bg:          #171A4F;
+  --bg-alt:      #1E2360;
+  --bg-section:  #1A1E57;
+  --bg-elevated: #242A6D;
   --text:        #F0E8F5;
-  --text-soft:   #B8A9D8;
-  --heading:     #FFFFFF;
-  --brand:       #F0E8F5;
-  --brand-soft:  #C9B6E3;
-  --accent:      #FF4081;
-  --accent-hover:#F50057;
-  --border:      #3A2354;
-  --border-soft: #2A1640;
-  --nav-bg:      rgba(21, 8, 31, 0.88);
-  --nav-border:  rgba(240, 232, 245, 0.12);
-  --pillar-bg:   linear-gradient(135deg, #2E1A47 0%, #6B3FA0 100%);
-  --pillar-text: #F0E8F5;
-  --hero-bg:     radial-gradient(ellipse at top, #2A1545 0%, #15081F 60%);
-  --orb-bg:      radial-gradient(circle, rgba(255, 64, 129, 0.4), rgba(46, 26, 71, 0) 55%);
-  --cta-text:    #FFFFFF;
+  --text-soft:   #9F8FC5;
+  --heading:     #DC8EEB;
+  --brand:       #DC8EEB;
+  --brand-soft:  #C76ED5;
+  --accent:      #DC8EEB;
+  --accent-hover:#C76ED5;
+  --border:      #2A2F6E;
+  --border-soft: #22275E;
+  --nav-bg:      rgba(23, 26, 79, 0.90);
+  --nav-border:  rgba(220, 142, 235, 0.18);
+  --pillar-bg:   linear-gradient(135deg, #7F368A 0%, #DC8EEB 100%);
+  --pillar-text: #FFFFFF;
+  --hero-bg:     radial-gradient(ellipse at top, #242A6D 0%, #171A4F 65%);
+  --orb-bg:      radial-gradient(circle, rgba(220, 142, 235, 0.38), rgba(23, 26, 79, 0) 55%);
+  --cta-text:    #171A4F;
 }
 
-/* ---------- Theme B1 · White with Purple Accents / Light (DEFAULT) ---------- */
+/* ---------- Theme B1 · PRECISION · DAYLIGHT ----------
+   Blue-led story, white canvas, charcoal body, True Cobalt headings,
+   Persian Blue primary CTAs, Light Blue as the accent highlight.
+   Palette: White / #292E8E True Cobalt / #373EBE Persian Blue / #76CBFD Light Blue. */
 .theme-b1 {
   --bg:          #FFFFFF;
-  --bg-alt:      #F8F7FA;
+  --bg-alt:      #F4FAFE;
   --bg-section:  #FFFFFF;
   --bg-elevated: #FFFFFF;
-  --text:        #1A1A22;
-  --text-soft:   #6B6B7D;
-  --heading:     #2E1A47;
-  --brand:       #2E1A47;
-  --brand-soft:  #6D4CA3;
-  --accent:      #7C3AED;
-  --accent-hover:#6028D1;
-  --border:      #E8E6EF;
-  --border-soft: #F0EEF6;
-  --nav-bg:      rgba(255, 255, 255, 0.92);
-  --nav-border:  rgba(46, 26, 71, 0.10);
-  --pillar-bg:   linear-gradient(135deg, #F1EDFB 0%, #E8DFF8 100%);
-  --pillar-text: #2E1A47;
-  --hero-bg:     linear-gradient(180deg, #FFFFFF 0%, #F6F3FC 100%);
-  --orb-bg:      radial-gradient(circle, rgba(124, 58, 237, 0.18), rgba(124, 58, 237, 0) 65%);
+  --text:        #474747;
+  --text-soft:   #6B7A92;
+  --heading:     #292E8E;
+  --brand:       #373EBE;
+  --brand-soft:  #4D56CE;
+  --accent:      #373EBE;
+  --accent-hover:#292E8E;
+  --border:      #DDE7F3;
+  --border-soft: #EEF5FB;
+  --nav-bg:      rgba(255, 255, 255, 0.94);
+  --nav-border:  rgba(41, 46, 142, 0.12);
+  --pillar-bg:   linear-gradient(135deg, #171A4F 0%, #373EBE 100%);
+  --pillar-text: #FFFFFF;
+  --hero-bg:     linear-gradient(180deg, #FFFFFF 0%, #F4FAFE 100%);
+  --orb-bg:      radial-gradient(circle, rgba(118, 203, 253, 0.28), rgba(41, 46, 142, 0) 65%);
   --cta-text:    #FFFFFF;
 }
 
-/* ---------- Theme B2 · White with Purple Accents / Dark ---------- */
+/* ---------- Theme B2 · PRECISION · MIDNIGHT ----------
+   Dark Navy canvas, True Cobalt alt surfaces, Light Blue as the neon
+   heading + CTA color. The diagnostic-dashboard mode.
+   Palette: #171A4F Dark Navy / #292E8E True Cobalt / #76CBFD Light Blue. */
 .theme-b2 {
-  --bg:          #0B0B12;
-  --bg-alt:      #131320;
-  --bg-section:  #0F0F18;
-  --bg-elevated: #1A1A28;
-  --text:        #F2F2F7;
-  --text-soft:   #9B9BB3;
-  --heading:     #FFFFFF;
-  --brand:       #B794F4;
-  --brand-soft:  #9B73E3;
-  --accent:      #B794F4;
-  --accent-hover:#9B73E3;
-  --border:      #2A2A3B;
-  --border-soft: #1F1F2E;
-  --nav-bg:      rgba(11, 11, 18, 0.88);
-  --nav-border:  rgba(183, 148, 244, 0.18);
-  --pillar-bg:   linear-gradient(135deg, #1F1235 0%, #3B2160 100%);
-  --pillar-text: #E9DDFC;
-  --hero-bg:     radial-gradient(ellipse at top, #1A1030 0%, #0B0B12 60%);
-  --orb-bg:      radial-gradient(circle, rgba(183, 148, 244, 0.35), rgba(11, 11, 18, 0) 60%);
-  --cta-text:    #0B0B12;
+  --bg:          #171A4F;
+  --bg-alt:      #1E2566;
+  --bg-section:  #1A1E57;
+  --bg-elevated: #292E8E;
+  --text:        #E8F0FA;
+  --text-soft:   #8FA8C9;
+  --heading:     #76CBFD;
+  --brand:       #76CBFD;
+  --brand-soft:  #4CA8E3;
+  --accent:      #76CBFD;
+  --accent-hover:#4CA8E3;
+  --border:      #2A3470;
+  --border-soft: #232A60;
+  --nav-bg:      rgba(23, 26, 79, 0.90);
+  --nav-border:  rgba(118, 203, 253, 0.20);
+  --pillar-bg:   linear-gradient(135deg, #171A4F 0%, #76CBFD 100%);
+  --pillar-text: #FFFFFF;
+  --hero-bg:     radial-gradient(ellipse at top, #242C7D 0%, #171A4F 65%);
+  --orb-bg:      radial-gradient(circle, rgba(118, 203, 253, 0.35), rgba(23, 26, 79, 0) 55%);
+  --cta-text:    #171A4F;
 }
 
 /* ============================================================
@@ -393,10 +407,13 @@ p { margin: 0; color: var(--text); }
     #8E8E93 3px 6px
   );
 }
-.swatch-a1 { background: linear-gradient(135deg, #FAF7F0 0%, #2E1A47 100%); }
-.swatch-a2 { background: linear-gradient(135deg, #2E1A47 0%, #E91E63 100%); }
-.swatch-b1 { background: linear-gradient(135deg, #FFFFFF 0%, #7C3AED 100%); }
-.swatch-b2 { background: linear-gradient(135deg, #0B0B12 0%, #B794F4 100%); }
+/* Swatches mirror each theme's defining color pair:
+   A = Regenerative (purple family), B = Precision (blue family)
+   1 = Daylight (white canvas), 2 = Midnight (dark navy canvas)   */
+.swatch-a1 { background: linear-gradient(135deg, #FFFFFF 0%, #7F368A 60%, #DC8EEB 100%); }
+.swatch-a2 { background: linear-gradient(135deg, #171A4F 0%, #7F368A 60%, #DC8EEB 100%); }
+.swatch-b1 { background: linear-gradient(135deg, #FFFFFF 0%, #373EBE 60%, #76CBFD 100%); }
+.swatch-b2 { background: linear-gradient(135deg, #171A4F 0%, #373EBE 60%, #76CBFD 100%); }
 
 /* Mobile — same bottom-right pill, slightly inset */
 @media (max-width: 560px) {
