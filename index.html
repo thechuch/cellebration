@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en" class="theme-wire">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cellebration — Website Wireframe Preview. Four color directions in one live document.">
+  <title>Cellebration — Website Wireframe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Wireframe banner — only renders when .theme-wire is active -->
+  <div class="wireframe-banner" aria-hidden="true">Wireframe Preview · Structure &amp; Content Only</div>
+
+  <!-- ============================================================
+       THEME SWITCHER — persistent, top-right, client-walkthrough UI
+       ============================================================ -->
+  <div class="theme-switcher" role="toolbar" aria-label="Preview theme selector">
+    <span class="switcher-label">Preview</span>
+    <button type="button" data-theme="wire" class="active switcher-wire" aria-label="Wireframe — structural preview">
+      <span class="swatch swatch-wire"></span>
+      <span class="swatch-label">Wireframe</span>
+    </button>
+    <div class="switcher-divider">Colorways</div>
+    <div class="switcher-buttons">
+      <button type="button" data-theme="a1" aria-label="Purple Predominant — Light mode">
+        <span class="swatch swatch-a1"></span>
+        <span class="swatch-label">Purple · Light</span>
+      </button>
+      <button type="button" data-theme="a2" aria-label="Purple Predominant — Dark mode">
+        <span class="swatch swatch-a2"></span>
+        <span class="swatch-label">Purple · Dark</span>
+      </button>
+      <button type="button" data-theme="b1" aria-label="White with Purple Accents — Light mode">
+        <span class="swatch swatch-b1"></span>
+        <span class="swatch-label">White · Light</span>
+      </button>
+      <button type="button" data-theme="b2" aria-label="White with Purple Accents — Dark mode">
+        <span class="swatch swatch-b2"></span>
+        <span class="swatch-label">White · Dark</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       NAV (floating on scroll · hover mega-menu · mobile drawer)
+       ============================================================ -->
+  <header class="site-nav" id="siteNav">
+    <div class="nav-inner">
+      <a href="#top" class="logo" aria-label="Cellebration — Home">
+        <span class="logo-mark" aria-hidden="true"></span>
+        <span class="logo-wordmark">CELLEBRATION</span>
+      </a>
+
+      <nav class="primary-nav" aria-label="Primary">
+
+        <!-- Services — mega-menu on hover/focus -->
+        <div class="nav-item has-mega">
+          <a href="#services" class="nav-link" aria-haspopup="true">
+            Services <span class="caret" aria-hidden="true">▾</span>
+          </a>
+          <div class="mega-menu" role="menu" aria-label="Services">
+            <div class="mega-menu-inner">
+              <div class="mega-header">
+                <span class="eyebrow">The Ecosystem</span>
+                <h3>One system. Six outcomes.</h3>
+              </div>
+              <div class="mega-grid">
+                <a class="mega-card" href="#services/restore" role="menuitem">
+                  <span class="mega-thumb" data-pillar="restore"><em>RESTORE</em></span>
+                  <span class="mega-copy">
+                    <strong>Restore</strong>
+                    <span>Pain, inflammation, chronic conditions.</span>
+                  </span>
+                </a>
+                <a class="mega-card" href="#services/perform" role="menuitem">
+                  <span class="mega-thumb" data-pillar="perform"><em>PERFORM</em></span>
+                  <span class="mega-copy">
+                    <strong>Perform</strong>
+                    <span>Athletic, cognitive, sexual, recovery.</span>
+                  </span>
+                </a>
+                <a class="mega-card" href="#services/protect" role="menuitem">
+                  <span class="mega-thumb" data-pillar="protect"><em>PROTECT</em></span>
+                  <span class="mega-copy">
+                    <strong>Protect</strong>
+                    <span>Anti-aging, prevention, immune resilience.</span>
+                  </span>
+                </a>
+                <a class="mega-card" href="#services/regenerate" role="menuitem">
+                  <span class="mega-thumb" data-pillar="regenerate"><em>REGENERATE</em></span>
+                  <span class="mega-copy">
+                    <strong>Regenerate</strong>
+                    <span>Tissue, joint, hormonal vitality.</span>
+                  </span>
+                </a>
+                <a class="mega-card" href="#services/weight-loss" role="menuitem">
+                  <span class="mega-thumb" data-pillar="weight"><em>WEIGHT LOSS</em></span>
+                  <span class="mega-copy">
+                    <strong>Weight Loss</strong>
+                    <span>Metabolic correction, not crash dieting.</span>
+                  </span>
+                </a>
+                <a class="mega-card" href="#services/aesthetics-hair" role="menuitem">
+                  <span class="mega-thumb" data-pillar="aesthetics"><em>AESTHETICS</em></span>
+                  <span class="mega-copy">
+                    <strong>Aesthetics &amp; Hair</strong>
+                    <span>Structural renewal of skin and scalp.</span>
+                  </span>
+                </a>
+              </div>
+              <a class="mega-footer-link" href="#services/all" role="menuitem">
+                See full service index <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Memberships — simple dropdown on hover/focus -->
+        <div class="nav-item has-dropdown">
+          <a href="#memberships" class="nav-link" aria-haspopup="true">
+            Memberships <span class="caret" aria-hidden="true">▾</span>
+          </a>
+          <div class="dropdown-menu" role="menu" aria-label="Memberships">
+            <a class="dropdown-item" href="#memberships/cellebration-club" role="menuitem">
+              <strong>The Cellebration Club</strong>
+              <span>$99/mo · Member pricing on the full ecosystem</span>
+            </a>
+            <a class="dropdown-item" href="#memberships/cellebration-club-unlimited" role="menuitem">
+              <strong>Cellebration Club Unlimited</strong>
+              <span>Daily recovery suite access</span>
+            </a>
+            <a class="dropdown-item" href="#memberships/hyper-club" role="menuitem">
+              <strong>The Hyper Club</strong>
+              <span>HBOT-focused · 1x, 2x, or Unlimited weekly</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="#team" class="nav-link">Team</a>
+        </div>
+        <div class="nav-item">
+          <a href="#contact" class="nav-link">Contact</a>
+        </div>
+      </nav>
+
+      <a href="#lead" class="btn btn-pill nav-cta">Book Now</a>
+
+      <button class="mobile-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileDrawer">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       MOBILE DRAWER (shown when hamburger is tapped)
+       ============================================================ -->
+  <aside class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Menu" aria-hidden="true">
+    <div class="mobile-drawer-inner">
+      <div class="mobile-drawer-header">
+        <a href="#top" class="logo" data-drawer-close>
+          <span class="logo-mark" aria-hidden="true"></span>
+          <span class="logo-wordmark">CELLEBRATION</span>
+        </a>
+        <button class="mobile-close" type="button" aria-label="Close menu" data-drawer-close>
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+
+      <nav class="mobile-nav" aria-label="Mobile">
+        <details class="mobile-section">
+          <summary>
+            <span>Services</span>
+            <span class="mobile-caret" aria-hidden="true">＋</span>
+          </summary>
+          <ul class="mobile-sublist">
+            <li><a href="#services/restore" data-drawer-close><strong>Restore</strong><span>Pain, inflammation, chronic conditions</span></a></li>
+            <li><a href="#services/perform" data-drawer-close><strong>Perform</strong><span>Athletic, cognitive, sexual, recovery</span></a></li>
+            <li><a href="#services/protect" data-drawer-close><strong>Protect</strong><span>Anti-aging, prevention, immune resilience</span></a></li>
+            <li><a href="#services/regenerate" data-drawer-close><strong>Regenerate</strong><span>Tissue, joint, hormonal vitality</span></a></li>
+            <li><a href="#services/weight-loss" data-drawer-close><strong>Weight Loss</strong><span>Metabolic correction</span></a></li>
+            <li><a href="#services/aesthetics-hair" data-drawer-close><strong>Aesthetics &amp; Hair</strong><span>Structural renewal of skin &amp; scalp</span></a></li>
+            <li><a href="#services/all" data-drawer-close class="mobile-sub-all">See full service index →</a></li>
+          </ul>
+        </details>
+
+        <details class="mobile-section">
+          <summary>
+            <span>Memberships</span>
+            <span class="mobile-caret" aria-hidden="true">＋</span>
+          </summary>
+          <ul class="mobile-sublist">
+            <li><a href="#memberships/cellebration-club" data-drawer-close><strong>The Cellebration Club</strong><span>$99/mo</span></a></li>
+            <li><a href="#memberships/cellebration-club-unlimited" data-drawer-close><strong>Club Unlimited</strong><span>Daily recovery suite</span></a></li>
+            <li><a href="#memberships/hyper-club" data-drawer-close><strong>The Hyper Club</strong><span>HBOT-focused</span></a></li>
+          </ul>
+        </details>
+
+        <a class="mobile-link" href="#team" data-drawer-close>Team</a>
+        <a class="mobile-link" href="#contact" data-drawer-close>Contact</a>
+
+        <a class="mobile-cta btn btn-primary" href="#lead" data-drawer-close>Book Now</a>
+
+        <div class="mobile-footer">
+          <p>info@cellebration.com</p>
+          <p>Sunny Isles · Sunset Harbour</p>
+        </div>
+      </nav>
+    </div>
+  </aside>
+
+  <main id="top">
+
+    <!-- ============================================================
+         BLOCK 1 · HERO
+         ============================================================ -->
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true">
+        <div class="hero-orb"></div>
+      </div>
+      <div class="container hero-inner">
+        <span class="eyebrow">Founder-led · Two South Florida Clinics</span>
+        <h1 class="hero-title">Health and Longevity<br>for Everyone.</h1>
+        <p class="hero-sub">Regenerative medicine without the luxury markup. Memberships start at $99 / month.</p>
+        <p class="hero-attribution">— George Kaltner, Founder &amp; CEO</p>
+        <div class="hero-cta">
+          <a href="#lead" class="btn btn-primary">Book Your Consultation</a>
+          <a href="#ecosystem" class="btn btn-ghost">Explore the Ecosystem ↓</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BLOCK 2 · THE CELLEBRATION ECOSYSTEM
+         ============================================================ -->
+    <section class="ecosystem" id="ecosystem">
+      <div class="container">
+        <header class="section-header">
+          <span class="eyebrow">The Cellebration Ecosystem</span>
+          <h2 class="section-title">One system. Six outcomes.</h2>
+          <p class="section-sub">A coordinated set of protocols that work together to restore your baseline, raise your ceiling, and keep you there.</p>
+        </header>
+
+        <div class="pillar-grid">
+          <article class="pillar-card" data-pillar="restore">
+            <div class="pillar-image"><span>RESTORE</span></div>
+            <h3>Restore</h3>
+            <p>Pain, inflammation, chronic conditions.</p>
+            <span class="card-link">Learn more →</span>
+          </article>
+          <article class="pillar-card" data-pillar="perform">
+            <div class="pillar-image"><span>PERFORM</span></div>
+            <h3>Perform</h3>
+            <p>Athletic, cognitive, sexual, recovery.</p>
+            <span class="card-link">Learn more →</span>
+          </article>
+          <article class="pillar-card" data-pillar="protect">
+            <div class="pillar-image"><span>PROTECT</span></div>
+            <h3>Protect</h3>
+            <p>Anti-aging, prevention, immune resilience.</p>
+            <span class="card-link">Learn more →</span>
+          </article>
+          <article class="pillar-card" data-pillar="regenerate">
+            <div class="pillar-image"><span>REGENERATE</span></div>
+            <h3>Regenerate</h3>
+            <p>Tissue, joint, hormonal vitality.</p>
+            <span class="card-link">Learn more →</span>
+          </article>
+          <article class="pillar-card" data-pillar="weight">
+            <div class="pillar-image"><span>WEIGHT LOSS</span></div>
+            <h3>Weight Loss</h3>
+            <p>Metabolic correction, not crash dieting.</p>
+            <span class="card-link">Learn more →</span>
+          </article>
+          <article class="pillar-card" data-pillar="aesthetics">
+            <div class="pillar-image"><span>AESTHETICS &amp; HAIR</span></div>
+            <h3>Aesthetics &amp; Hair</h3>
+            <p>Structural renewal of skin and scalp.</p>
+            <span class="card-link">Learn more →</span>
+          </article>
+        </div>
+
+        <div class="section-cta">
+          <a href="#services" class="btn btn-secondary">Explore the Ecosystem</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BLOCK 3 · THE CELLEBRATION CLUB
+         ============================================================ -->
+    <section class="club" id="memberships">
+      <div class="container club-inner">
+        <div class="club-copy">
+          <span class="eyebrow">The Cellebration Club</span>
+          <h2 class="section-title">Membership,<br>not appointments.</h2>
+          <p class="section-sub">$99 / month, 12-month commitment, direct member pricing on everything that matters.</p>
+          <div class="club-cta">
+            <a href="#lead" class="btn btn-primary">Join the Club — $99/mo</a>
+            <a href="#memberships" class="btn btn-ghost">See Unlimited + Hyper Club →</a>
+          </div>
+        </div>
+
+        <div class="club-pricing">
+          <div class="price-row">
+            <span class="service">EBOO Systemic Filtration</span>
+            <span class="price"><strong>$799</strong> <em>non-member $999</em></span>
+          </div>
+          <div class="price-row">
+            <span class="service">Medical Peptide Protocols</span>
+            <span class="price"><strong>$149</strong> <em>non-member $199</em></span>
+          </div>
+          <div class="price-row">
+            <span class="service">IV Therapy</span>
+            <span class="price"><strong>1 free / mo</strong> <em>+$99 after</em></span>
+          </div>
+          <div class="price-row">
+            <span class="service">Mini Facial + Skin Analysis</span>
+            <span class="price"><strong>$99</strong> <em>non-member $129</em></span>
+          </div>
+          <div class="price-row">
+            <span class="service">IM Shots</span>
+            <span class="price"><strong>$25</strong> <em>non-member $35</em></span>
+          </div>
+          <div class="price-row">
+            <span class="service">2 × PNOĒ Metabolic Tests</span>
+            <span class="price"><strong>Included</strong></span>
+          </div>
+          <div class="price-row">
+            <span class="service">Basic Blood Panel (annual)</span>
+            <span class="price"><strong>Included</strong></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BLOCK 4 · EBOO FOR EVERYONE
+         ============================================================ -->
+    <section class="eboo">
+      <div class="container eboo-inner">
+        <div class="eboo-visual" aria-hidden="true">
+          <div class="eboo-ring"></div>
+          <span class="eboo-label">EBOO</span>
+        </div>
+        <div class="eboo-copy">
+          <span class="eyebrow">EBOO for Everyone™</span>
+          <h2 class="section-title">Start with a<br>clean system.</h2>
+          <p class="section-sub">You can&rsquo;t build on a dirty foundation. EBOO filters and oxygenates your full blood volume so every protocol that follows actually lands.</p>
+          <p class="eboo-keystone"><strong>Everyone at Cellebration starts here.</strong></p>
+          <a href="#lead" class="btn btn-primary">Book Your First Session</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BLOCK 5 · FEATURED SERVICES (horizontal carousel)
+         ============================================================ -->
+    <section class="featured" id="services">
+      <div class="container">
+        <header class="section-header">
+          <span class="eyebrow">Featured Services</span>
+          <h2 class="section-title">Eleven ways in.</h2>
+          <p class="section-sub">Each service connects back to one or more outcome pillars. Tap any card to go to the full service page.</p>
+        </header>
+      </div>
+      <div class="featured-rail" role="list">
+        <article class="service-card" role="listitem">
+          <h4>EBOO</h4>
+          <p>Filters and oxygenates your full blood volume. The foundation everything else is built on.</p>
+        </article>
+        <article class="service-card" role="listitem">
+          <h4>HBOT</h4>
+          <p>Pressurized oxygen that supports tissue recovery and cellular repair.</p>
+        </article>
+        <article class="service-card" role="listitem">
+          <h4>Peptides</h4>
+          <p>Precision signaling protocols that support metabolic, recovery, and hormonal goals.</p>
+        </article>
+        <article class="service-card" role="listitem">
+          <h4>IV Therapy</h4>
+          <p>NAD+, minerals, and vitamins delivered for immediate uptake.</p>
+        </article>
+        <article class="service-card" role="listitem">
+          <h4>Red Light</h4>
+          <p>Full-body mitochondrial support for skin, recovery, and energy.</p>
+        </article>
+        <article class="service-card" role="listitem">
+          <h4>Hydrogen Breathing</h4>
+          <p>Supports oxidative balance at the cellular level.</p>
+        </article>
+        <article class="service-card" role="listitem">
+          <h4>Regenerative Facials</h4>
+          <p>Cosmetic facials paired with red light for appearance support.</p>
+        </article>
+        <article class="service-card" role="listitem">
+          <h4>Hair Restoration</h4>
+          <p>Follicle support and scalp circulation protocols.</p>
+        </article>
+        <article class="service-card" role="listitem">
+          <h4>PNOĒ</h4>
+          <p>Clinical-grade metabolic analysis from a single breath test.</p>
+        </article>
+        <article class="service-card" role="listitem">
+          <h4>Weight Optimization</h4>
+          <p>Metabolic correction using light, GLP support, and InBody-guided tracking.</p>
+        </article>
+        <article class="service-card" role="listitem">
+          <h4>Advanced Therapies</h4>
+          <p>Cellular-level protocols that support joint function, tissue, and long-term vitality.</p>
+        </article>
+      </div>
+      <div class="container">
+        <div class="section-cta">
+          <a href="#services" class="btn btn-secondary">See All Services</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BLOCK 6 · AS SEEN IN
+         ============================================================ -->
+    <section class="seen-in">
+      <div class="container">
+        <span class="eyebrow centered">As Seen In</span>
+        <div class="logo-wall">
+          <span class="logo-ph">FORBES</span>
+          <span class="logo-ph">BLOOMBERG</span>
+          <span class="logo-ph">WIRED</span>
+          <span class="logo-ph">MEN&rsquo;S HEALTH</span>
+          <span class="logo-ph">BIOHACKERS MAGAZINE</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BLOCK 7 · PARTNERSHIPS
+         ============================================================ -->
+    <section class="partners">
+      <div class="container partners-inner">
+        <div class="partners-copy">
+          <span class="eyebrow">Partnerships</span>
+          <h2 class="section-title">We don&rsquo;t guess.<br>We measure.</h2>
+        </div>
+        <div class="partners-grid">
+          <article class="partner-card">
+            <h4>PNOĒ</h4>
+            <p>Clinical-grade metabolic analysis.</p>
+          </article>
+          <article class="partner-card">
+            <h4>Kimera Labs</h4>
+            <p>Regenerative signaling research.</p>
+          </article>
+        </div>
+      </div>
+      <div class="container">
+        <div class="video-placeholder">
+          <span class="play-icon" aria-hidden="true">▶</span>
+          <span class="video-label">Founder video · George Kaltner &amp; the Founder of PNOĒ</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BLOCK 8 · SOCIAL PROOF
+         ============================================================ -->
+    <section class="social-proof">
+      <div class="container">
+        <header class="section-header">
+          <span class="eyebrow">What patients are saying</span>
+          <h2 class="section-title">From Google &amp; Instagram.</h2>
+        </header>
+
+        <div class="reviews-grid">
+          <article class="review-card">
+            <div class="stars" aria-label="5 out of 5">★★★★★</div>
+            <p>Google Review placeholder — live reviews auto-pulled from the clinic&rsquo;s Google Business profile.</p>
+            <span class="review-name">— Live feed</span>
+          </article>
+          <article class="review-card">
+            <div class="stars" aria-label="5 out of 5">★★★★★</div>
+            <p>Google Review placeholder — live reviews auto-pulled from the clinic&rsquo;s Google Business profile.</p>
+            <span class="review-name">— Live feed</span>
+          </article>
+          <article class="review-card">
+            <div class="stars" aria-label="5 out of 5">★★★★★</div>
+            <p>Google Review placeholder — live reviews auto-pulled from the clinic&rsquo;s Google Business profile.</p>
+            <span class="review-name">— Live feed</span>
+          </article>
+        </div>
+
+        <div class="ig-grid">
+          <div class="ig-tile"><span>@CellebrationHealth</span></div>
+          <div class="ig-tile"><span>@CellebrationHealth</span></div>
+          <div class="ig-tile"><span>@CellebrationHealth</span></div>
+          <div class="ig-tile"><span>@CellebrationHealth</span></div>
+          <div class="ig-tile"><span>@CellebrationHealth</span></div>
+          <div class="ig-tile"><span>@CellebrationHealth</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PERSISTENT LEAD-GEN FORM
+         ============================================================ -->
+    <section class="lead-gen" id="lead">
+      <div class="container">
+        <div class="lead-inner">
+          <div class="lead-copy">
+            <span class="eyebrow">Ready when you are.</span>
+            <h2 class="section-title">Tell us what you&rsquo;re<br>working on.</h2>
+            <p class="section-sub">One-step capture. A member of our team follows up the same day.</p>
+          </div>
+          <form class="lead-form" onsubmit="event.preventDefault(); alert('Wireframe demo — form submission not live.');">
+            <div class="field">
+              <label for="lead-name">Name</label>
+              <input id="lead-name" type="text" placeholder="Your name" required>
+            </div>
+            <div class="field">
+              <label for="lead-email">Email</label>
+              <input id="lead-email" type="email" placeholder="you@email.com" required>
+            </div>
+            <div class="field">
+              <label for="lead-phone">Phone</label>
+              <input id="lead-phone" type="tel" placeholder="(305) 555-0123" required>
+            </div>
+            <div class="field">
+              <label for="lead-interest">I&rsquo;m interested in</label>
+              <select id="lead-interest" required>
+                <option value="">Choose a pillar...</option>
+                <option>Restore</option>
+                <option>Perform</option>
+                <option>Protect</option>
+                <option>Regenerate</option>
+                <option>Weight Loss</option>
+                <option>Aesthetics &amp; Hair</option>
+                <option>Not sure yet</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary btn-wide">Book Now →</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FOOTER
+         ============================================================ -->
+    <footer class="site-footer" id="contact">
+      <div class="container">
+        <div class="footer-top">
+          <a href="#top" class="logo logo-footer">
+            <span class="logo-mark" aria-hidden="true"></span>
+            <span class="logo-wordmark">CELLEBRATION</span>
+          </a>
+          <div class="newsletter">
+            <label for="footer-email">Newsletter</label>
+            <div class="newsletter-row">
+              <input id="footer-email" type="email" placeholder="Email address">
+              <button type="button" class="btn btn-ghost btn-sm">Subscribe</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h5>Services</h5>
+            <ul>
+              <li><a href="#services">Restore</a></li>
+              <li><a href="#services">Perform</a></li>
+              <li><a href="#services">Protect</a></li>
+              <li><a href="#services">Regenerate</a></li>
+              <li><a href="#services">Weight Loss</a></li>
+              <li><a href="#services">Aesthetics &amp; Hair</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Memberships</h5>
+            <ul>
+              <li><a href="#memberships">Cellebration Club</a></li>
+              <li><a href="#memberships">Club Unlimited</a></li>
+              <li><a href="#memberships">Hyper Club</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Explore</h5>
+            <ul>
+              <li><a href="#services">All Services</a></li>
+              <li><a href="#services">EBOO</a></li>
+              <li><a href="#services">HBOT</a></li>
+              <li><a href="#services">IV Therapy</a></li>
+              <li><a href="#services">PNOĒ</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Company</h5>
+            <ul>
+              <li><a href="#team">Team</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li><a href="#">Privacy</a></li>
+              <li><a href="#">Terms</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-contact">
+          <p><strong>info@cellebration.com</strong> · <em>[Phone — TBD]</em></p>
+          <p>Two South Florida clinics · <strong>Sunny Isles</strong> · <strong>Sunset Harbour</strong></p>
+        </div>
+
+        <div class="footer-disclaimer">
+          <p><strong>THIS NOTICE MUST BE PROVIDED TO YOU UNDER FLORIDA LAW.</strong> This physician performs one or more advanced therapies that have not yet been approved by the United States Food and Drug Administration. Cellebration always encourages patients to consult with their primary care provider.</p>
+        </div>
+
+        <div class="footer-legal">
+          <p>© 2026 Cellebration. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <script>
+    // Theme switcher — persists selection to sessionStorage so the client
+    // can refresh without losing the chosen colorway.
+    (function () {
+      var html = document.documentElement;
+      var buttons = document.querySelectorAll('[data-theme]');
+      var stored = sessionStorage.getItem('cellebration-theme');
+      if (stored) {
+        setTheme(stored);
+      }
+
+      buttons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          setTheme(btn.dataset.theme);
+          sessionStorage.setItem('cellebration-theme', btn.dataset.theme);
+        });
+      });
+
+      function setTheme(t) {
+        html.className = 'theme-' + t;
+        buttons.forEach(function (b) {
+          b.classList.toggle('active', b.dataset.theme === t);
+        });
+      }
+    })();
+
+    // Shrink nav on scroll
+    (function () {
+      var nav = document.getElementById('siteNav');
+      window.addEventListener('scroll', function () {
+        if (window.scrollY > 32) {
+          nav.classList.add('scrolled');
+        } else {
+          nav.classList.remove('scrolled');
+        }
+      }, { passive: true });
+    })();
+
+    // Mobile drawer — open/close, body scroll lock, ESC + tap-outside
+    (function () {
+      var toggle = document.querySelector('.mobile-toggle');
+      var drawer = document.getElementById('mobileDrawer');
+      if (!toggle || !drawer) return;
+
+      function openDrawer() {
+        drawer.classList.add('open');
+        toggle.classList.add('open');
+        drawer.setAttribute('aria-hidden', 'false');
+        toggle.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeDrawer() {
+        drawer.classList.remove('open');
+        toggle.classList.remove('open');
+        drawer.setAttribute('aria-hidden', 'true');
+        toggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+      toggle.addEventListener('click', function () {
+        if (drawer.classList.contains('open')) {
+          closeDrawer();
+        } else {
+          openDrawer();
+        }
+      });
+      drawer.querySelectorAll('[data-drawer-close]').forEach(function (el) {
+        el.addEventListener('click', closeDrawer);
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && drawer.classList.contains('open')) {
+          closeDrawer();
+        }
+      });
+      // Tap outside the inner panel closes
+      drawer.addEventListener('click', function (e) {
+        if (e.target === drawer) closeDrawer();
+      });
+    })();
+
+    // Desktop dropdown menus — click-toggle for touch + keyboard fallback.
+    // Hover still works via CSS :hover; this layer handles tap devices,
+    // keyboard (Enter/Space), and explicit clicks. Click-outside closes all.
+    (function () {
+      var triggers = document.querySelectorAll('.has-mega, .has-dropdown');
+      if (!triggers.length) return;
+
+      function closeAll(except) {
+        triggers.forEach(function (t) {
+          if (t !== except) t.classList.remove('is-open');
+        });
+      }
+
+      triggers.forEach(function (item) {
+        var link = item.querySelector('.nav-link');
+        if (!link) return;
+
+        // Tap / click on the trigger toggles the panel open.
+        // On desktop where hover opens it, a click still navigates if the
+        // panel is already open (second-click semantics).
+        link.addEventListener('click', function (e) {
+          // Only intercept when the link is a fragment (#something) and we
+          // want to show the menu, not jump to the section immediately.
+          var wasOpen = item.classList.contains('is-open');
+          if (!wasOpen) {
+            e.preventDefault();
+            closeAll(item);
+            item.classList.add('is-open');
+          } else {
+            // Second click — let it navigate and close the menu
+            item.classList.remove('is-open');
+          }
+        });
+
+        // Mouseleave clears the JS-opened state so hover behaves correctly
+        item.addEventListener('mouseleave', function () {
+          item.classList.remove('is-open');
+        });
+      });
+
+      // Click anywhere outside any trigger closes open menus
+      document.addEventListener('click', function (e) {
+        var inside = false;
+        triggers.forEach(function (t) {
+          if (t.contains(e.target)) inside = true;
+        });
+        if (!inside) closeAll(null);
+      });
+
+      // Escape closes
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeAll(null);
+      });
+    })();
+  </script>
+</body>
+</html>
