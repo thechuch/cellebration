@@ -16,31 +16,25 @@
   <div class="wireframe-banner" aria-hidden="true">Wireframe Preview · Structure &amp; Content Only</div>
 
   <!-- ============================================================
-       THEME SWITCHER — persistent, top-right, client-walkthrough UI
+       THEME SWITCHER — bottom-right stoplight pill
        ============================================================ -->
-  <div class="theme-switcher" role="toolbar" aria-label="Preview theme selector">
-    <span class="switcher-label">Preview</span>
-    <button type="button" data-theme="wire" class="active switcher-wire" aria-label="Wireframe — structural preview">
+  <div class="theme-switcher" role="toolbar" aria-label="Preview theme">
+    <button type="button" data-theme="wire" class="active switcher-wire" title="Wireframe" aria-label="Wireframe">
       <span class="swatch swatch-wire"></span>
-      <span class="swatch-label">Wireframe</span>
     </button>
-    <div class="switcher-divider">Colorways</div>
+    <span class="switcher-divider" aria-hidden="true"></span>
     <div class="switcher-buttons">
-      <button type="button" data-theme="a1" aria-label="Purple Predominant — Light mode">
+      <button type="button" data-theme="a1" title="Purple · Light" aria-label="Purple Predominant, Light mode">
         <span class="swatch swatch-a1"></span>
-        <span class="swatch-label">Purple · Light</span>
       </button>
-      <button type="button" data-theme="a2" aria-label="Purple Predominant — Dark mode">
+      <button type="button" data-theme="a2" title="Purple · Dark" aria-label="Purple Predominant, Dark mode">
         <span class="swatch swatch-a2"></span>
-        <span class="swatch-label">Purple · Dark</span>
       </button>
-      <button type="button" data-theme="b1" aria-label="White with Purple Accents — Light mode">
+      <button type="button" data-theme="b1" title="White · Light" aria-label="White with Purple Accents, Light mode">
         <span class="swatch swatch-b1"></span>
-        <span class="swatch-label">White · Light</span>
       </button>
-      <button type="button" data-theme="b2" aria-label="White with Purple Accents — Dark mode">
+      <button type="button" data-theme="b2" title="White · Dark" aria-label="White with Purple Accents, Dark mode">
         <span class="swatch swatch-b2"></span>
-        <span class="swatch-label">White · Dark</span>
       </button>
     </div>
   </div>

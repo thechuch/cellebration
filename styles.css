@@ -298,106 +298,113 @@ p { margin: 0; color: var(--text); }
 .btn-wide { width: 100%; }
 
 /* ============================================================
-   THEME SWITCHER (top-right floating card)
+   THEME SWITCHER — bottom-right stoplight pill
+   Tiny horizontal row of 5 colored dots. No labels on the face;
+   hover tooltips via native title attribute handle naming.
    ============================================================ */
 .theme-switcher {
   position: fixed;
-  top: 16px;
-  right: 16px;
+  bottom: 20px;
+  right: 20px;
   z-index: 1000;
-  background: #111;
+  background: rgba(18, 18, 22, 0.78);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 14px;
-  padding: 10px 12px 12px 12px;
-  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.4);
-  font-family: var(--font-heading);
-  color: #FFF;
-  max-width: calc(100vw - 32px);
-}
-.switcher-label {
-  display: block;
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.55);
-  margin-bottom: 8px;
-  padding-left: 4px;
-}
-.switcher-wire {
-  width: 100%;
-  display: flex !important;
-  justify-content: center;
-  margin-bottom: 10px;
-  padding: 10px 12px !important;
-}
-.switcher-divider {
-  font-size: 0.58rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.42);
-  text-align: center;
-  margin-bottom: 6px;
-  padding-top: 2px;
-}
-.switcher-buttons {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6px;
-}
-.swatch-wire {
-  background: repeating-linear-gradient(
-    45deg,
-    #D1D1D6 0 4px,
-    #8E8E93 4px 8px
-  );
-}
-.theme-switcher button {
+  border-radius: 999px;
+  padding: 7px 10px;
   display: flex;
   align-items: center;
   gap: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* Kill all the old label/divider/wrapper styles — pill is flat */
+.switcher-label,
+.switcher-divider,
+.swatch-label {
+  display: none !important;
+}
+.switcher-wire {
+  /* revert previous full-width treatment — it's just another dot now */
+  width: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: inline-flex !important;
+  justify-content: initial !important;
+}
+.switcher-buttons {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+/* Add a subtle visual separator between the wireframe dot and the 4 colorways */
+.switcher-wire + .switcher-divider {
+  display: inline-block !important;
+  width: 1px;
+  height: 16px;
+  background: rgba(255, 255, 255, 0.18);
+  margin: 0 3px;
+  padding: 0;
+  font-size: 0;
+  letter-spacing: 0;
+}
+
+/* Dot buttons */
+.theme-switcher button {
+  width: 14px;
+  height: 14px;
+  padding: 0;
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: #FFF;
-  padding: 8px 10px;
-  border-radius: 8px;
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  transition: all 0.2s ease;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.18s var(--ease);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 .theme-switcher button:hover {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(255, 255, 255, 0.28);
+  transform: scale(1.18);
 }
-.theme-switcher button.active {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: #FFF;
+.theme-switcher button.active::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+  pointer-events: none;
 }
+
+/* The swatch fills the button */
 .swatch {
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  display: inline-block;
-  flex-shrink: 0;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: block;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+.swatch-wire {
+  background: repeating-linear-gradient(
+    45deg,
+    #D1D1D6 0 3px,
+    #8E8E93 3px 6px
+  );
 }
 .swatch-a1 { background: linear-gradient(135deg, #FAF7F0 0%, #2E1A47 100%); }
 .swatch-a2 { background: linear-gradient(135deg, #2E1A47 0%, #E91E63 100%); }
 .swatch-b1 { background: linear-gradient(135deg, #FFFFFF 0%, #7C3AED 100%); }
 .swatch-b2 { background: linear-gradient(135deg, #0B0B12 0%, #B794F4 100%); }
 
+/* Mobile — same bottom-right pill, slightly inset */
 @media (max-width: 560px) {
   .theme-switcher {
-    top: auto;
     bottom: 16px;
     right: 16px;
-    left: 16px;
-    max-width: none;
-  }
-  .switcher-buttons {
-    grid-template-columns: 1fr 1fr;
+    padding: 6px 9px;
+    gap: 7px;
   }
 }
 
@@ -1533,17 +1540,8 @@ html { scroll-behavior: smooth; }
   color: #FFF;
 }
 
-/* Reserve right-side space in the nav so the floating theme switcher never
-   overlaps the Book Now pill. Applies above mobile (where the switcher
-   docks to the bottom instead). */
-@media (min-width: 561px) {
-  .nav-inner { padding-right: 300px; }
-  .site-nav.scrolled .nav-inner { padding-right: 300px; }
-}
-@media (min-width: 561px) and (max-width: 880px) {
-  .nav-inner { padding-right: 270px; }
-  .site-nav.scrolled .nav-inner { padding-right: 270px; }
-}
+/* Theme switcher now lives bottom-right, so the nav no longer needs
+   to reserve right-side space for it. */
 
 /* ============================================================
    WIREFRAME MODE OVERRIDES
