@@ -751,6 +751,160 @@ p { margin: 0; color: var(--text); }
   color: var(--text-soft);
 }
 
+/* ---------- Membership 3-Column Comparison Mega-Menu ---------- */
+.membership-mega .mega-menu-inner { max-width: 840px; }
+.membership-compare-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+@media (max-width: 900px) {
+  .membership-compare-grid { grid-template-columns: 1fr; gap: 12px; }
+}
+.membership-col {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 20px;
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-md);
+  background: var(--bg-elevated);
+  transition: border-color 0.2s ease, transform 0.2s var(--ease);
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+}
+.membership-col:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+.membership-col--featured {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent);
+}
+.membership-col-badge {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent);
+  color: var(--cta-text);
+  font-family: var(--font-heading);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 12px;
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+}
+.membership-col-eyebrow {
+  font-family: var(--font-heading);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  margin-bottom: 6px;
+}
+.membership-col-name {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--heading);
+  margin-bottom: 4px;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+}
+.membership-col-price {
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+.membership-col-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.membership-col-features li {
+  font-size: 0.78rem;
+  color: var(--text-soft);
+  padding-left: 14px;
+  position: relative;
+  line-height: 1.35;
+}
+.membership-col-features li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+.membership-col-cta {
+  display: block;
+  margin-top: 16px;
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.02em;
+}
+
+/* ---------- Services List (inside mega-menu footer) ---------- */
+.mega-services-list {
+  border-top: 1px solid var(--border-soft);
+  padding-top: 16px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.mega-services-label {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  margin-bottom: 10px;
+}
+.mega-services-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 8px;
+}
+.mega-services-links a {
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--text);
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-alt);
+  border: 1px solid transparent;
+  transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.mega-services-links a:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--bg-elevated);
+}
+
+/* Wireframe overrides for new mega-menu elements */
+.theme-wire .membership-col { border-style: dashed; }
+.theme-wire .membership-col--featured { box-shadow: none; border-width: 2px; }
+.theme-wire .membership-col-badge { background: #3A3A3C; }
+.theme-wire .mega-services-list { border-top-style: dashed; }
+.theme-wire .mega-services-links a { border: 1px dashed #C7C7CC; background: transparent; }
+
 /* ---------- Mobile toggle (hamburger) ---------- */
 .mobile-toggle {
   display: none;
