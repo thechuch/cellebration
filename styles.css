@@ -3533,34 +3533,48 @@ html { scroll-behavior: smooth; }
   border-color: #E5E5EA;
 }
 
-/* Subtle "WIREFRAME" watermark strip at the very top of the page
-   (only visible in wireframe mode — disappears when switching to a colorway) */
-.theme-wire body::before,
-.theme-wire .wireframe-banner {
-  content: '';
-}
-.wireframe-banner {
-  display: none;
+/* ============================================================
+   PROMO NANO BAR — thin top strip for promotions / announcements
+   Sticks to the top of the viewport, pushes nav down.
+   ============================================================ */
+.promo-bar {
   position: sticky;
   top: 0;
   z-index: 950;
-  background: repeating-linear-gradient(
-    -45deg,
-    #2A2A2E 0 8px,
-    #1C1C1E 8px 16px
-  );
-  color: #FFF;
-  font-family: 'Courier New', monospace;
-  font-size: 0.68rem;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
+  background: var(--heading);
+  color: var(--bg);
   text-align: center;
-  padding: 8px 16px;
+  padding: 9px 20px;
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+}
+.promo-bar p { margin: 0; color: inherit; }
+.promo-bar a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-weight: 600;
+  margin-left: 4px;
+  white-space: nowrap;
+}
+.promo-bar a:hover { opacity: 0.8; }
+
+/* Wireframe override — dashed border, monospace feel */
+.theme-wire .promo-bar {
+  background: #2A2A2E;
+  color: #FFF;
+  font-family: var(--font-heading);
   border-bottom: 1px solid #000;
 }
-.theme-wire .wireframe-banner {
-  display: block;
+.theme-wire .promo-bar a { color: #FFF; }
+
+/* Nav offset — push nav below the promo bar */
+.site-nav {
+  top: 36px;
 }
 .theme-wire .site-nav {
-  top: 32px;
+  top: 36px;
 }
