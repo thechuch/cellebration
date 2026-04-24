@@ -674,14 +674,17 @@
         var link = item.querySelector('.nav-link');
         if (!link) return;
         link.addEventListener('click', function (e) {
-          var wasOpen = item.classList.contains('is-open');
-          if (!wasOpen) {
+          // If the user clicked the caret (chevron), open the menu instead
+          // of navigating. Otherwise, let the click navigate normally.
+          var target = e.target;
+          var isCaret = target && target.classList && target.classList.contains('caret');
+          if (isCaret) {
             e.preventDefault();
+            var wasOpen = item.classList.contains('is-open');
             closeAll(item);
-            item.classList.add('is-open');
-          } else {
-            item.classList.remove('is-open');
+            if (!wasOpen) item.classList.add('is-open');
           }
+          // Non-caret clicks: allow default navigation to the link href.
         });
         item.addEventListener('mouseleave', function () { item.classList.remove('is-open'); });
       });
