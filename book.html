@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Aesthetics & Hair pillar at Cellebration. Structural renewal of skin and scalp. True health shows up in your skin and hair. We focus on the architecture under the surface — not just topical fixes.">
-  <title>Cellebration — Aesthetics & Hair</title>
+  <meta name="description" content="Book your visit to Cellebration at our Sunny Isles Beach or Sunset Harbour clinics. Simple one-form booking for peptides, HBOT, IV therapy, weight loss, aesthetics, and sexual wellness services.">
+  <title>Book a Visit — Cellebration South Florida</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600;1,700&display=swap" rel="stylesheet">
@@ -60,7 +60,7 @@
       <nav class="primary-nav" aria-label="Primary">
 
         <div class="nav-item has-mega">
-          <a href="services-all.html" class="nav-link active" aria-haspopup="true">
+          <a href="services-all.html" class="nav-link" aria-haspopup="true">
             Services <span class="caret" aria-hidden="true">▾</span>
           </a>
           <div class="mega-menu" role="menu" aria-label="Services">
@@ -206,7 +206,7 @@
           <a href="about.html" class="nav-link">About Us</a>
         </div>
         <div class="nav-item">
-          <a href="locations.html" class="nav-link">Locations</a>
+          <a href="locations.html" class="nav-link active">Locations</a>
         </div>
         <div class="nav-item">
           <a href="contact.html" class="nav-link">Contact</a>
@@ -295,92 +295,91 @@
         <nav class="breadcrumb" aria-label="Breadcrumb">
         <a href="index.html">Home</a>
         <span aria-hidden="true">›</span>
-        <a href="services-all.html">Services</a>
-        <span aria-hidden="true">›</span>
-        <span aria-current="page">Aesthetics &amp; Hair</span>
+        <span aria-current="page">Book a Visit</span>
         </nav>
-        <span class="eyebrow">Pillar 06 · Aesthetics &amp; Hair</span>
-        <h1 class="page-title">Built from the<br>inside out.</h1>
-        <p class="page-sub">Structural renewal of skin and scalp. True health shows up in your skin and hair. We focus on the architecture under the surface &mdash; not just topical fixes.</p>
+        <span class="eyebrow">Book a Visit</span>
+        <h1 class="page-title">Book<br>your visit.</h1>
+        <p class="page-sub">Pick a clinic, tell us what you&rsquo;re interested in, and share your contact info. A member of our team will follow up within one business day to confirm your appointment time.</p>
       </div>
     </section>
 
-    <section class="pillar-body">
-      <div class="container">
-        <div class="pillar-layout">
+    <section class="book-section">
+      <div class="container book-inner">
+        <div class="book-form-wrap">
+          <header class="section-header book-header">
+            <span class="eyebrow">Booking Request</span>
+            <h2 class="section-title">A few quick details.</h2>
+          </header>
 
-          <div class="pillar-main">
-            <div class="pillar-block">
-              <span class="block-label">What we address</span>
-              <ul class="pillar-address-list">
-          <li><strong>Thinning hair and scalp inflammation</strong><span>The soil under the follicle.</span></li>
-          <li><strong>Sagging skin and fine lines</strong><span>Collagen support, not just masks.</span></li>
-          <li><strong>Dull complexion</strong><span>Circulation, hydration, mitochondrial energy.</span></li>
-          <li><strong>Loss of facial volume</strong><span>Structural, not just topical.</span></li>
-          <li><strong>Post-treatment recovery</strong><span>Pairing with other pillars.</span></li>
-              </ul>
+          <form class="contact-form book-form" onsubmit="event.preventDefault(); alert('Wireframe demo — form submission not live.');">
+            <div class="field"><label for="b-name">Full name</label><input id="b-name" type="text" placeholder="Your name" required></div>
+            <div class="field"><label for="b-email">Email</label><input id="b-email" type="email" placeholder="you@email.com" required></div>
+            <div class="field"><label for="b-phone">Phone</label><input id="b-phone" type="tel" placeholder="(305) 555-0123" required></div>
+            <div class="field">
+              <label for="b-clinic">Preferred clinic</label>
+              <select id="b-clinic" required>
+                <option value="">Choose a clinic...</option>
+                <option>Sunny Isles</option>
+                <option>Sunset Harbour</option>
+                <option>Either location</option>
+              </select>
             </div>
-
-            <div class="pillar-block">
-              <span class="block-label">The strategy</span>
-              <p class="pillar-strategy">Repair the &ldquo;soil&rdquo; of the scalp and the internal support of the skin at the cellular level, then layer in supportive cosmetic care. Aesthetics &amp; Hair at Cellebration is medical-first &mdash; not a spa package.</p>
+            <div class="field">
+              <label for="b-service">Service of interest</label>
+              <select id="b-service" required>
+                <option value="">What are you interested in?</option>
+                <option>Peptide Therapy</option>
+                <option>Weight Loss</option>
+                <option>IV Therapy</option>
+                <option>Hyperbaric Oxygen Therapy (HBOT, EBOO, EBO2)</option>
+                <option>Aesthetics &amp; Hair</option>
+                <option>Sexual Wellness</option>
+                <option>Not sure &mdash; I&rsquo;d like a consultation</option>
+              </select>
             </div>
-
-            <div class="pillar-block">
-              <span class="block-label">The tools</span>
-              <p class="pillar-tools"><span class="tool">Hair Restoration</span> · <span class="tool">Regenerative Facials</span> · <span class="tool">Red Light Therapy</span> · <span class="tool">HBOT</span> · <span class="tool">Targeted Peptides</span> · <span class="tool">Microneedling + Bio-signals</span> · <span class="tool">Endospheres</span></p>
+            <div class="field">
+              <label for="b-date">Preferred date</label>
+              <input id="b-date" type="date">
             </div>
+            <div class="field">
+              <label for="b-time">Preferred time of day</label>
+              <select id="b-time">
+                <option>No preference</option>
+                <option>Morning (before 11am)</option>
+                <option>Midday (11am–2pm)</option>
+                <option>Afternoon (2pm–5pm)</option>
+                <option>Evening (5pm+)</option>
+              </select>
+            </div>
+            <div class="field field-full">
+              <label for="b-notes">Notes <span class="optional">(optional)</span></label>
+              <textarea id="b-notes" rows="3" placeholder="Anything we should know before your visit"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-wide">Send Booking Request</button>
+            <p class="book-micro">Membership upsells &amp; package pricing handled over the phone &mdash; no commitment at booking.</p>
+          </form>
+        </div>
 
-        <p class="pillar-disclaimer"><em>Regenerative facials are cosmetic in nature and pair well with red light therapy for a complete appearance-support routine. Individual experiences vary.</em></p>
+        <aside class="book-sidebar">
+          <div class="book-sidebar-card">
+            <span class="eyebrow">Prefer to call?</span>
+            <a class="book-phone" href="tel:+18002117757">(800) 211-7757</a>
+            <p>Speak with our team directly. We can answer questions, set up a consultation, or walk through membership options.</p>
           </div>
-
-          <aside class="pillar-upsell">
-            <span class="eyebrow">Member Rate</span>
-            <h3>Available with the<br>Cellebration Club.</h3>
-            <p>Members get direct access to every tool above at member pricing. $99/month, 12-month commitment, no surprises.</p>
-            <a href="cellebration-club.html" class="btn btn-primary">Join the Club</a>
-            <a href="locations.html#book" class="btn btn-ghost">Book a consultation</a>
-          </aside>
-
-        </div>
-
-        <div class="pillar-cta-block">
-          <h2>Get Back Your Glow.</h2>
-          <div class="hero-cta">
-            <a href="locations.html#book" class="btn btn-primary">Book Your First Session</a>
-            <a href="services-all.html" class="btn btn-ghost">See all services</a>
+          <div class="book-sidebar-card">
+            <span class="eyebrow">First visit?</span>
+            <p>We recommend our <strong>visitor's guides</strong> before your appointment &mdash; parking, directions, what to bring, and what to expect.</p>
+            <ul class="book-sidebar-links">
+              <li><a href="sunny-isles.html">Sunny Isles Visitor Guide &rarr;</a></li>
+              <li><a href="sunset-harbour.html">Sunset Harbour Visitor Guide &rarr;</a></li>
+            </ul>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="related-pillars-section">
-      <div class="container">
-        <header class="section-header">
-          <span class="eyebrow">Related Pillars</span>
-          <h2 class="section-title">Where to go next.</h2>
-          <p class="section-sub">Every pillar connects to the others. Here&rsquo;s what pairs naturally with Aesthetics &amp; Hair.</p>
-        </header>
-        <div class="related-grid">
-          <a class="related-card" href="protect.html">
-            <span class="related-num">03</span>
-            <strong>Protect</strong>
-            <span class="related-desc">Anti-aging, prevention, immune resilience.</span>
-            <span class="related-go">Learn more →</span>
-          </a>
-          <a class="related-card" href="regenerate.html">
-            <span class="related-num">04</span>
-            <strong>Regenerate</strong>
-            <span class="related-desc">Tissue, joint, hormonal vitality.</span>
-            <span class="related-go">Learn more →</span>
-          </a>
-          <a class="related-card" href="weight-loss.html">
-            <span class="related-num">05</span>
-            <strong>Weight Loss</strong>
-            <span class="related-desc">Metabolic correction, not crash dieting.</span>
-            <span class="related-go">Learn more →</span>
-          </a>
-        </div>
+          <div class="book-sidebar-card">
+            <span class="eyebrow">Not sure what to book?</span>
+            <p>Start with a short consultation. We&rsquo;ll look at your goals and recommend a protocol &mdash; no pressure to commit to a package.</p>
+            <a href="contact.html" class="btn btn-ghost btn-sm">Contact instead</a>
+          </div>
+        </aside>
       </div>
     </section>
 

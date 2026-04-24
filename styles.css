@@ -219,15 +219,15 @@ h1, h2, h3, h4, h5 {
 }
 
 /* DISPLAY H1 — hero, page titles.
-   Zalando Black, UPPERCASE, tight line-height. This is the loudest type
-   moment on the page. One per section. */
+   Archivo Bold (700), UPPERCASE, tight line-height. Dialed back from
+   900/Black per client feedback — still commanding, less aggressive. */
 .hero-title,
 .page-title {
   font-family: var(--font-display);
-  font-weight: 900;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: -0.01em;
-  line-height: 0.95;
+  letter-spacing: -0.005em;
+  line-height: 0.98;
   color: var(--heading);
 }
 .hero-title {
@@ -1588,6 +1588,20 @@ p { margin: 0; color: var(--text); }
   box-shadow: var(--shadow-md);
   border-color: var(--accent);
 }
+.service-card-tag {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--bg-alt);
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 12px;
+  align-self: flex-start;
+}
 .service-card h4 {
   color: var(--heading);
   margin-bottom: 10px;
@@ -1597,6 +1611,11 @@ p { margin: 0; color: var(--text); }
   text-transform: uppercase;
   letter-spacing: 0;
   line-height: 1.1;
+}
+.theme-wire .service-card-tag {
+  background: transparent;
+  border: 1px dashed #C7C7CC;
+  color: #3A3A3C;
 }
 .service-card p {
   font-size: 0.9rem;
@@ -3694,7 +3713,7 @@ html { scroll-behavior: smooth; }
 }
 .promo-headline {
   font-family: var(--font-display);
-  font-weight: 900;
+  font-weight: 700;
   text-transform: uppercase;
   font-size: clamp(2.5rem, 5.8vw, 4.8rem);
   line-height: 1.02;
@@ -4202,3 +4221,393 @@ html { scroll-behavior: smooth; }
   font-family: 'Courier New', monospace;
 }
 .theme-wire .visitor-closing { background: #1C1C1E; }
+
+/* ============================================================
+   INTRO BLOCK (what-we-do section between services & memberships)
+   ============================================================ */
+.intro-block {
+  background: var(--bg-section);
+  padding: 96px 0;
+  border-top: 1px solid var(--border-soft);
+  border-bottom: 1px solid var(--border-soft);
+}
+.intro-block-inner {
+  max-width: 820px;
+  text-align: center;
+}
+.intro-block .section-title { margin-bottom: 24px; }
+.intro-copy {
+  font-size: clamp(1.1rem, 1.7vw, 1.35rem);
+  color: var(--text);
+  line-height: 1.55;
+  max-width: 62ch;
+  margin: 0 auto;
+}
+.theme-wire .intro-block { border-color: #C7C7CC; border-style: dashed; }
+
+/* ============================================================
+   "WE DON'T GUESS, WE MEASURE" block (homepage credibility)
+   ============================================================ */
+.measure {
+  background: var(--bg-alt);
+}
+.measure-video {
+  margin-bottom: 48px;
+}
+.measure-video .video-sub {
+  position: relative;
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--pillar-text);
+  opacity: 0.6;
+}
+.measure-partners {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* ============================================================
+   ABOUT US · PHILOSOPHY BLOCK
+   ============================================================ */
+.philosophy-section {
+  background: var(--bg-section);
+  padding: 96px 0;
+}
+.philosophy-inner { max-width: 1100px; margin: 0 auto; }
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+@media (max-width: 900px) { .philosophy-grid { grid-template-columns: 1fr; } }
+.philosophy-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 36px 28px;
+  transition: border-color 0.2s ease, transform 0.22s var(--ease);
+}
+.philosophy-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+.philosophy-num {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+.philosophy-card h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+  color: var(--heading);
+}
+.philosophy-card p { color: var(--text-soft); font-size: 0.96rem; line-height: 1.55; }
+.theme-wire .philosophy-card { border-style: dashed; }
+
+/* Founder video block */
+.founder-video {
+  max-width: 880px;
+  margin: 48px auto 0 auto;
+}
+.founder-video .video-sub {
+  position: relative;
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--pillar-text);
+  opacity: 0.6;
+}
+
+/* ============================================================
+   BOOK PAGE (book.html)
+   ============================================================ */
+.book-section { background: var(--bg-section); padding: 72px 0 96px 0; }
+.book-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: 48px;
+  align-items: start;
+}
+@media (max-width: 900px) { .book-inner { grid-template-columns: 1fr; gap: 32px; } }
+.book-header { text-align: left; margin: 0 0 32px 0; max-width: none; }
+.book-header .section-title { margin-bottom: 8px; }
+.book-form-wrap {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 40px 36px;
+}
+.book-micro {
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  color: var(--text-soft);
+  margin-top: 12px;
+  line-height: 1.5;
+}
+.book-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.book-sidebar-card {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 24px 22px;
+}
+.book-sidebar-card .eyebrow { margin-bottom: 8px; }
+.book-sidebar-card p {
+  font-size: 0.92rem;
+  color: var(--text-soft);
+  line-height: 1.55;
+  margin: 0 0 12px 0;
+}
+.book-phone {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.75rem;
+  color: var(--heading);
+  display: block;
+  margin: 8px 0 12px 0;
+  letter-spacing: -0.01em;
+}
+.book-phone:hover { color: var(--accent); }
+.book-sidebar-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.book-sidebar-links a {
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+.btn-sm { padding: 8px 16px; font-size: 0.82rem; }
+.theme-wire .book-form-wrap,
+.theme-wire .book-sidebar-card { border-style: dashed; }
+
+/* ============================================================
+   CONTACT PAGE (contact.html)
+   ============================================================ */
+.contact-primary {
+  background: var(--bg-alt);
+  padding: 72px 0;
+}
+.contact-primary-inner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+@media (max-width: 900px) { .contact-primary-inner { grid-template-columns: 1fr; } }
+.contact-channel {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.contact-channel p {
+  color: var(--text-soft);
+  font-size: 0.96rem;
+  line-height: 1.55;
+  margin: 12px 0 0 0;
+}
+.contact-phone-big,
+.contact-email-big {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--heading);
+  display: block;
+  margin: 10px 0 6px 0;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+.contact-phone-big { font-size: 2rem; }
+.contact-email-big { font-size: 1.35rem; word-break: break-word; }
+.contact-phone-big:hover,
+.contact-email-big:hover { color: var(--accent); }
+.contact-hours {
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  color: var(--text-soft);
+  margin: 12px 0 0 0 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.contact-book-intro {
+  color: var(--text-soft);
+  font-size: 0.96rem;
+  line-height: 1.55;
+  margin: 12px 0 20px 0;
+}
+.contact-channel--book .btn { margin-top: auto; align-self: flex-start; }
+.contact-locations-strip { background: var(--bg-section); padding: 72px 0; }
+.location-hub-cta-link {
+  display: inline-block;
+  margin-top: 12px;
+  font-family: var(--font-heading);
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+.theme-wire .contact-channel { border-style: dashed; }
+
+/* ============================================================
+   ACCESSIBILITY WIDGET (umiamihealth-style)
+   Floating bottom-left button. Opens a small dialog.
+   ============================================================ */
+.a11y-widget {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 900;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px 10px 10px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.a11y-widget:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+.a11y-widget svg {
+  background: rgba(255,255,255,0.16);
+  border-radius: 50%;
+  padding: 3px;
+  flex-shrink: 0;
+}
+@media (max-width: 640px) {
+  .a11y-widget-label { display: none; }
+  .a11y-widget { padding: 10px; }
+}
+
+.a11y-dialog {
+  position: fixed;
+  inset: 0;
+  background: rgba(26, 26, 26, 0.55);
+  z-index: 1100;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.a11y-dialog.open { opacity: 1; pointer-events: auto; }
+.a11y-dialog-inner {
+  background: var(--bg-elevated);
+  border-radius: var(--radius-lg);
+  padding: 32px 32px 28px 32px;
+  max-width: 480px;
+  width: 100%;
+  position: relative;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-lg);
+}
+.a11y-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: transparent;
+  border: none;
+  font-size: 1.6rem;
+  color: var(--text-soft);
+  cursor: pointer;
+  line-height: 1;
+  padding: 4px 8px;
+}
+.a11y-close:hover { color: var(--heading); }
+.a11y-dialog h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--heading);
+  margin: 0 0 12px 0;
+  text-transform: uppercase;
+}
+.a11y-intro {
+  color: var(--text-soft);
+  font-size: 0.92rem;
+  margin: 0 0 20px 0;
+  line-height: 1.55;
+}
+.a11y-options {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.a11y-options li {
+  padding: 12px 14px;
+  background: var(--bg-alt);
+  border-radius: var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.a11y-options strong {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--heading);
+  font-size: 0.92rem;
+}
+.a11y-options span {
+  font-size: 0.8rem;
+  color: var(--text-soft);
+}
+.a11y-statement {
+  margin: 0;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-soft);
+}
+.a11y-statement a {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--accent);
+  font-size: 0.88rem;
+}
+
+/* Footer legal links row (HIPAA/Accessibility/etc) */
+.footer-legal-links {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+}
+.footer-legal-links a {
+  color: var(--text-soft);
+  transition: color 0.15s ease;
+}
+.footer-legal-links a:hover { color: var(--heading); }
