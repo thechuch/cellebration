@@ -1973,22 +1973,16 @@ p { margin: 0; color: var(--text); }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.4fr 1.4fr 1fr 1fr 1.3fr;
+  grid-template-columns: 1.3fr 1fr 1fr 1.3fr;
   gap: 40px;
   margin-bottom: 40px;
 }
-@media (max-width: 1100px) {
-  .footer-grid { grid-template-columns: repeat(3, 1fr); gap: 36px; }
-}
-@media (max-width: 720px) {
+@media (max-width: 900px) {
   .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
 }
 .footer-col h5 {
   color: var(--heading);
   margin-bottom: 16px;
-}
-.footer-col h5.footer-col-subhead {
-  margin-top: 24px;
 }
 .footer-col ul {
   list-style: none;
@@ -2005,18 +1999,19 @@ p { margin: 0; color: var(--text); }
 }
 .footer-col a:hover { color: var(--accent); }
 
-/* Condensed footer-bottom — disclaimer + copyright sit together below the grid */
+/* Condensed footer-bottom — disclaimer on the left, legal-links + copyright on the right */
 .footer-bottom {
   padding-top: 24px;
   border-top: 1px solid var(--border-soft);
   display: flex;
   flex-wrap: wrap;
-  align-items: baseline;
+  align-items: flex-start;
   justify-content: space-between;
-  gap: 16px 32px;
+  gap: 20px 40px;
 }
 .footer-bottom-disclaimer {
-  flex: 1 1 60%;
+  flex: 1 1 55%;
+  min-width: 280px;
   color: var(--text-soft);
   font-size: 0.76rem;
   line-height: 1.5;
@@ -2027,14 +2022,37 @@ p { margin: 0; color: var(--text); }
   font-weight: 700;
   letter-spacing: 0.04em;
 }
-.footer-bottom-copy {
-  flex: 0 0 auto;
+.footer-bottom-meta {
+  flex: 0 1 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+.footer-bottom-legal {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 6px 18px;
+}
+.footer-bottom-legal a {
   color: var(--text-soft);
-  font-size: 0.8rem;
+  font-size: 0.78rem;
+  transition: color 0.2s ease;
+}
+.footer-bottom-legal a:hover { color: var(--heading); }
+.footer-bottom-copy {
+  color: var(--text-soft);
+  font-size: 0.78rem;
   margin: 0;
 }
 @media (max-width: 720px) {
   .footer-bottom { flex-direction: column; align-items: flex-start; }
+  .footer-bottom-meta { align-items: flex-start; }
+  .footer-bottom-legal { justify-content: flex-start; }
   .footer-bottom-disclaimer { flex: 1 1 100%; }
 }
 
